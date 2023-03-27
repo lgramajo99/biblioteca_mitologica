@@ -1,0 +1,23 @@
+.contenedor {
+    border: 1px solid black;
+    width: 20rem;
+    text-align: center;
+    border-radius: .5rem;
+    padding: .5rem;
+}
+
+.nombre {
+    color: blue
+}
+
+.botonEntrar {
+    background-color: rgb(118, 150, 118);
+    width: 50%;
+    font-weight: bolder;
+    color: black;
+}
+
+.imagen {
+    position: relative;
+    width: 100%;
+}
