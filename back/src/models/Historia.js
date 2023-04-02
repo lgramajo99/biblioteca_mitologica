@@ -8,13 +8,21 @@ module.exports = (sequelize) => {
             autoIncrement: true,
             primaryKey: true,
         },
-        nombre: {
+        titulo: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        subtitulo: {
             type: DataTypes.STRING,
             allowNull: false,
         },
         historia: {
             type: DataTypes.TEXT,
             allowNull: false,
-        }
+        },
+        imagen: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
     });
 };
