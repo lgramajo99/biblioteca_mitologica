@@ -44,8 +44,8 @@
 .lista .link {
     text-decoration: none;
     color: #F5F5F5;
+    margin: 0 3px;
     transition: 0.2s ease-in-out;
-
 }
 
 .lista .link:hover {
