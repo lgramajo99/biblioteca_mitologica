@@ -5,9 +5,30 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #2C2C2C;
+  color: #F5F5F5;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+
+/*  
+#1E1E1E: (Negro puro) 
+#212121: (Negro grafito) background de Nav y Footer
+#2C2C2C: (Negro profundo) Background de la pagina
+#303030: (Negro carbón)
+#333333: (Negro oscuro)
+#424242: (Gris oscuro)
+#484848: (Gris antracita)
+#666666: (Gris medio)
+#808080: (Gris claro)
+#9E9E9E: (Gris plateado)     
+
+#F5F5F5: (blanco humo) Letras
+#D9D9D9: (LightGray) Hover de los LINKs
+*/

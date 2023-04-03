@@ -1,0 +1,78 @@
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1E1E1E;
+    padding: 15px;
+    font-size: large;
+    margin: 0 0 15px 0;
+}
+
+.logo {
+    color: #F5F5F5;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.btnHamburguesa {
+    display: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #F5F5F5;
+    font-size: large;
+    transition: 0.2s ease-in-out;
+}
+
+.btnHamburguesa:hover {
+    font-size: larger;
+    color: #D9D9D9;
+}
+
+.lista {
+    list-style: none;
+    display: flex;
+}
+
+
+.lista .link {
+    text-decoration: none;
+    color: #F5F5F5;
+    transition: 0.2s ease-in-out;
+
+}
+
+.lista .link:hover {
+    color: #D9D9D9;
+}
+
+@media only screen and (max-width: 600px) {
+
+    /* Agrega aquí las reglas CSS que se aplicarán en pantallas pequeñas */
+    .lista {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btnHamburguesa {
+        display: block;
+    }
+
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+
+    /* Agrega aquí las reglas CSS que se aplicarán en pantallas medianas */
+}
+
+@media only screen and (min-width: 1025px) {
+
+    /* Agrega aquí las reglas CSS que se aplicarán en pantallas grandes */
+
+}
