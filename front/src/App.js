@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Admin from './components/Admin';
-import Cards from './components/cards/Cards';
-import Footer from './components/footer/Footer';
-import Home from './components/Home';
+import Admin from './components/pages/Admin';
+import Cards from './components/pages/cards/Cards';
+import Footer from './components/common/footer/Footer';
+import Home from './components/pages/Home';
 import Nav from './components/nav/Nav';
 
 function App() {
