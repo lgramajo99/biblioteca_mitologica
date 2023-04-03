@@ -1,0 +1,36 @@
+.home {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+.home>*:nth-child(1) {
+    grid-column: span 9;
+}
+
+.home>*:nth-child(2) {
+    grid-column: span 3;
+}
+
+/* Para pantallas con un ancho de hasta 600px */
+@media only screen and (max-width: 600px) {
+
+    /* Agrega aquí las reglas CSS que se aplicarán en pantallas pequeñas */
+    .home {
+        grid-template-columns: 12fr;
+        gap: 0;
+    }
+
+    .home>*:nth-child(2) {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Agrega aquí las reglas CSS que se aplicarán en pantallas medianas */
+}
+
+@media only screen and (min-width: 1025px) {
+    /* Agrega aquí las reglas CSS que se aplicarán en pantallas grandes */
+}

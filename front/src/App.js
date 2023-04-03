@@ -3,7 +3,7 @@ import './App.css';
 import Admin from './components/pages/Admin';
 import Cards from './components/pages/cards/Cards';
 import Footer from './components/common/footer/Footer';
-import Home from './components/pages/Home';
+import Home from './components/pages/home/Home';
 import Nav from './components/common/nav/Nav';
 
 function App() {
