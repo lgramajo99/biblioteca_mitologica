@@ -3,12 +3,22 @@ import styles from './Cards.module.css'
 
 function Cards() {
     return (
-        <div className={styles.contenedor}>
+        <section className={styles.contenedor}>
             <Card />
             <Card />
             <Card />
             <Card />
-        </div>
+
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+        </section>
     )
 }
 
