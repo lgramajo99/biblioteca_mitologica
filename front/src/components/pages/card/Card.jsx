@@ -1,5 +1,4 @@
-import styles from '../card/Card.module.css'
-import '../../styles.less'
+import styles from './Card.module.css'
 
 function Card() {
     let pruebaImg = 'https://www.zooplus.es/magazine/wp-content/uploads/2022/05/Cuanto-pesa-un-gato-2.jpeg';
@@ -11,5 +10,6 @@ function Card() {
         <button className={styles.botonEntrar} disabled="disabled">Entrar</button>
     </div>)
 }
+
 
 export default Card;

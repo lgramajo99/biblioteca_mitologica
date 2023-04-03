@@ -3,8 +3,7 @@ import { faBars, faX } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
 import styles from './Nav.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { flagHamburger } from '../../redux/actions/nav.actions';
-
+import { flagHamburger } from '../../../redux/actions/nav.actions';
 
 
 function Nav() {
