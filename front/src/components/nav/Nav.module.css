@@ -28,10 +28,11 @@
     color: #F5F5F5;
     font-size: large;
     transition: 0.2s ease-in-out;
+    margin-left: auto;
 }
 
 .btnHamburguesa:hover {
-    font-size: larger;
+    /* font-size: larger; */
     color: #D9D9D9;
 }
 
@@ -55,6 +56,11 @@
 @media only screen and (max-width: 600px) {
 
     /* Agrega aquí las reglas CSS que se aplicarán en pantallas pequeñas */
+    .menu {
+        flex-direction: column;
+        text-align: end;
+    }
+
     .lista {
         display: flex;
         flex-direction: column;
@@ -69,10 +75,16 @@
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
 
     /* Agrega aquí las reglas CSS que se aplicarán en pantallas medianas */
+    .btnHamburguesa {
+        display: block;
+    }
 }
 
 @media only screen and (min-width: 1025px) {
 
     /* Agrega aquí las reglas CSS que se aplicarán en pantallas grandes */
 
+    .btnHamburguesa {
+        display: block;
+    }
 }

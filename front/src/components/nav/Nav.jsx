@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faX } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
 import styles from './Nav.module.css';
 import { useSelector, useDispatch } from 'react-redux';
@@ -22,10 +22,11 @@ function Nav() {
             <Link className={styles.logo} to='/inicio'>LOGO</Link>
             <div className={styles.menu}>
                 <button className={styles.btnHamburguesa} onClick={handleHamburgerClick}>
-                    <FontAwesomeIcon icon={faBars} />
+                    <FontAwesomeIcon icon={botonHamburger ? faX : faBars} />
                 </button>
+
                 {botonHamburger &&
-                    
+
                     <ul className={styles.lista}>
                         <Link className={`${styles.link}`} to='/'><li>Inicio</li></Link>
                         <Link className={`${styles.link}`} to='/*'><li>Colección</li></Link>
