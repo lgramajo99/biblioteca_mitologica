@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-between;
     background-color: #1E1E1E;
-    padding: 15px;
+    padding: 25px 30px;
     font-size: large;
     margin: 0 0 15px 0;
 }
@@ -59,6 +59,10 @@
     .menu {
         flex-direction: column;
         text-align: end;
+    }
+
+    .navbar{
+        align-items: start;
     }
 
     .lista {

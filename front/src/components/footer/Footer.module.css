@@ -1,0 +1,39 @@
+.footer {
+    text-align: center;
+    background-color: #1E1E1E;
+    padding: 20px;
+}
+
+.contenedor {
+    width: 90%;
+    margin: auto auto;
+}
+
+.hr {
+    width: 90%;
+    border-color: #484848;
+}
+
+.lista {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 10px;
+}
+
+.lista .links {
+    color: #F5F5F5;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.lista .links:hover {
+    color: #D9D9D9;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .lista {
+        flex-direction: column;
+    }
+}
