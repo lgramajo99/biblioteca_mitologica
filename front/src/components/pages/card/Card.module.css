@@ -1,4 +1,43 @@
-.imagen{
+.contenedor {
+    border-radius: .8rem;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid red;
+    transition: .5s ease;
+    width: auto;
+}
+
+.contenedor:hover {
+    transform: scale(1.02);
+}
+
+.imagen {
     width: 100%;
     height: auto;
+
+}
+
+.footer {
+    border: 1px solid red;
+    padding: 1%;
+
+}
+
+
+.nombre {
+    color: #F5F5F5;
+    font-size: large;
+    text-decoration: none;
+    font-weight: bolder;
+    transition: 0.2s ease;
+}
+
+.nombre:hover {
+    color: #D9D9D9;
+}
+
+.copete {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
