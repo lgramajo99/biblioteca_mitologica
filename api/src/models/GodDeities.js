@@ -6,6 +6,14 @@ module.exports = (sequelize) => {
             type: DataTypes.INTEGER,
             autoincrement: true,
             primarykey: true
+        },
+        fullName: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        nickname: {
+            type: DataTypes.STRING,
+            allowNull: true,
         }
     })
 }
