@@ -4,10 +4,10 @@ module.exports = (sequelize) => {
     sequelize.define('godDeities', {
         id: {
             type: DataTypes.INTEGER,
-            autoincrement: true,
-            primarykey: true
+            autoIncrement: true,
+            primaryKey: true
         },
-        fullName: {
+        fullname: {
             type: DataTypes.STRING,
             allowNull: false,
         },

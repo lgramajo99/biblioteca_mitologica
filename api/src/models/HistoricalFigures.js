@@ -4,8 +4,8 @@ module.exports = (sequelize) => {
     sequelize.define('historicalFigures', {
         id: {
             type: DataTypes.INTEGER,
-            autoincrement: true,
-            primarykey: true
+            autoIncrement: true,
+            primaryKey: true,
         },
         name: {
             type: DataTypes.STRING,
