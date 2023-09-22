@@ -4,8 +4,8 @@ module.exports = (sequelize) => {
     sequelize.define('mythologicalCharacters', {
         id: {
             type: DataTypes.INTEGER,
-            autoincrement: true,
-            primarykey: true
-        }
+            autoIncrement: true,
+            primaryKey: true,
+        },
     })
 }

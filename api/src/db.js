@@ -34,11 +34,24 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Users } = sequelize.models;
-
+const { Characters, CreaturesMythological, GodDeities,
+  HistoricalFigures, Mythologies, Users, } = sequelize.models;
 // Aca vendrian las relaciones
 
+// Relación entre Characters y CreaturesMythological
+// Characters.hasOne(CreaturesMythological, { foreignKey: 'idType' });
+// CreaturesMythological.belongsTo(Characters, { foreignKey: 'idType' });
+CreaturesMythological.hasMany(Characters, { foreignKey: 'characterType' });
+Characters.belongsTo(CreaturesMythological, { foreignKey: 'characterType' });
 
+
+// Relación entre Characters y GodDeities
+// Characters.hasOne(GodDeities, { foreignKey: 'idType' });
+// GodDeities.belongsTo(Characters, { foreignKey: 'idType' });
+
+// Relación entre Characters y HistoricalFigures
+// Characters.hasOne(HistoricalFigures, { foreignKey: 'idType' });
+// HistoricalFigures.belongsTo(Characters, { foreignKey: 'idType' });
 
 
 
