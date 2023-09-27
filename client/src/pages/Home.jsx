@@ -1,8 +1,28 @@
+import Card from "../components/Card";
+
 function Home() {
     return (
-        <div>
-            <h1 className="bg-slate-800">Biblioteca mitologica</h1>
-        </div>
+        <section className="text-center">
+            <h1 className="">Biblioteca mitologica</h1>
+            <aside>
+                <Card />
+            </aside>
+            <aside>
+                Lista de mitologias
+                <ul>
+                    <li>Mitol - #1</li>
+                    <li>Mitol - #2</li>
+                    <li>Mitol - #3</li>
+                    <li>Mitol - #4</li>
+                    <li>Mitol - #5</li>
+                    <li>Mitol - #6</li>
+                    <li>Mitol - #7</li>
+                    <li>Mitol - #8</li>
+                    <li>Mitol - #9</li>
+                    <li>Mitol - #0</li>
+                </ul>
+            </aside>
+        </section>
     )
 }
 export default Home;
