@@ -7,7 +7,7 @@ function Manufactures({ seccion }) {
         <section>
             <h1>Seccion articulos: {seccion}</h1>
 
-            <article className="grid grid-cols-3">
+            <article className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {cards.map((card) => card)}
             </article>
 
