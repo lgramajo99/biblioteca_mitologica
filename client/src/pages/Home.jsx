@@ -1,12 +1,18 @@
 import Card from "../components/Card";
+import Manufactures from "../components/Manufactures";
 
 function Home() {
     return (
         <section className="text-center">
             <h1 className="">Biblioteca mitologica</h1>
             <aside>
-                <Card />
+
+                <Manufactures seccion={'Mas recientes'} />
+
+                <Manufactures seccion='Mas vistos' />
             </aside>
+
+
             <aside>
                 Lista de mitologias
                 <ul>
