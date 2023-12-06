@@ -1,14 +1,18 @@
+import { useState } from "react";
+
+
 function PandoraFilter() {
+    const [isOpen, setOpen] = useState(false)
+    const handleFilterToggle = () => { setOpen(!isOpen) };
+
     return (
         <div>
 
-            <button type="button" className="multiselect dropdown-toggle btn btn-sm btn-default" data-toggle="dropdown" title="None selected" aria-expanded="false">
-                <span className="multiselect-selected-text">
-                    <b>Tipos:</b>Todos</span><b className="caret"></b>
+            <button type="button" onClick={handleFilterToggle} data-toggle="dropdown" title="None selected" aria-expanded="false">
+                <span><b>Tipos:</b>Todos</span>
             </button>
 
-            <ul className="multiselect-container genres-select dropdown-menu">
-
+            {isOpen && <ul>
                 <li><a tabindex="0"><label className="checkbox">
                     <input type="checkbox" value="nordico" />Nordico</label></a></li>
 
@@ -33,7 +37,7 @@ function PandoraFilter() {
                 <li><a tabindex="0"><label className="checkbox">
                     <input type="checkbox" value="azteca" />Azteca</label></a></li>
             </ul>
-        </div>
+            }        </div>
     )
 }
 
