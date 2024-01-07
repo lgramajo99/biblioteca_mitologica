@@ -8,7 +8,7 @@ function Manufactures({ seccion }) {
             <h1>Seccion articulos: {seccion}</h1>
 
             <article className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                {cards.map((card) => card)}
+                {cards.map((card, index) => <div key={index}><Card /></div>)}
             </article>
 
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">

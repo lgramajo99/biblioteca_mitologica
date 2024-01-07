@@ -6,7 +6,7 @@ function Home() {
     return (
         <section className="text-center sm:">
             <h1 className="">Biblioteca mitologica</h1>
-            <secction className="flex flex-wrap">
+            <section className="flex flex-wrap">
 
                 <Login />
 
@@ -17,7 +17,7 @@ function Home() {
                 <aside className="md:w-3/12 lg:w-2/12">
                     <AsideBar />
                 </aside>
-            </secction >
+            </section >
         </section>
     )
 }
