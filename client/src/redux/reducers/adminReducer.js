@@ -2,7 +2,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    openLogin: false,
+    openLogin: true,
 };
 
 const adminSlice = createSlice({
