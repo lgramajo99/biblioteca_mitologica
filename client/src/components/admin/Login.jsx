@@ -59,12 +59,12 @@ function Login() {
                         <path d="M512 592c-44.8 0-80-35.2-80-80s35.2-80 80-80 80 35.2 80 80-35.2 80-80 80zM272 312c-27.2 0-48-20.8-48-48s20.8-48 48-48 48 20.8 48 48-20.8 48-48 48zM416 880c-27.2 0-48-20.8-48-48s20.8-48 48-48 48 20.8 48 48-20.8 48-48 48z m448-432c-27.2 0-48-20.8-48-48s20.8-48 48-48 48 20.8 48 48-20.8 48-48 48z" fill="#2F4BFF" />
                     </svg>
 
-                    <h3>Inicio de sesión Biblioteca Mitologica.</h3>
+                    <h3 className="mb-4">Inicio de sesión Biblioteca Mitologica.</h3>
 
                     <form className="d-flex flex-col" onSubmit={handleSubmit}>
                         <div className="mb-4">
-                            <label className="block text-gray-700 text-sm font-bold"
-                                htmlFor="password">
+                            <label className="block text-left text-gray-700 text-sm font-bold"
+                                htmlFor="email">
                                 Correo electrónico *
                             </label>
                             <input
@@ -73,6 +73,7 @@ function Login() {
                                 type="email"
                                 name="email"
                                 id="email"
+                                autoComplete="email"
                                 required
                                 value={formData.email}
                                 onChange={handleInputChange}
@@ -80,7 +81,7 @@ function Login() {
                         </div>
 
                         <div className="mb-4">
-                            <label className="block text-gray-700 text-sm font-bold"
+                            <label className="block text-left text-gray-700 text-sm font-bold"
                                 htmlFor="password">
                                 Contraseña *
                             </label>
@@ -90,7 +91,7 @@ function Login() {
                                 type="password"
                                 name="password"
                                 id="password"
-                                autoComplete="currentPassword"
+                                autoComplete="current-password"
                                 required
                                 value={formData.password}
                                 onChange={handleInputChange}
