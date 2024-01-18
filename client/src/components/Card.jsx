@@ -15,7 +15,7 @@ function Card() {
 
                 <div className="mt-4 mx-4 text-right">
                     <a className="text-blue-500 font-bold underline hover:text-blue-700"
-                        href="#"
+                        href="/articulo-prueba"
                         target="_blank">
                         Leer más...
                     </a>

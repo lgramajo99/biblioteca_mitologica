@@ -6,6 +6,7 @@ import ArticlePost from './components/admin/ArticlePost'
 import Directory from './pages/Directory'
 import Home from './pages/Home'
 import ErrorPage from './pages/ErrorPage';
+import ArticleContainer from './pages/ArticleContainer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" exact element={<Home />} />
         <Route path="/directory" element={<Directory />} />
         <Route path="/article" element={<ArticlePost />} />
+        <Route path='/articulo-prueba' element={<ArticleContainer />} />
       </Routes>
       <Footer />
     </div >
