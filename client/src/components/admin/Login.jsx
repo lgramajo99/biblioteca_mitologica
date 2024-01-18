@@ -59,7 +59,7 @@ function Login() {
                         <path d="M512 592c-44.8 0-80-35.2-80-80s35.2-80 80-80 80 35.2 80 80-35.2 80-80 80zM272 312c-27.2 0-48-20.8-48-48s20.8-48 48-48 48 20.8 48 48-20.8 48-48 48zM416 880c-27.2 0-48-20.8-48-48s20.8-48 48-48 48 20.8 48 48-20.8 48-48 48z m448-432c-27.2 0-48-20.8-48-48s20.8-48 48-48 48 20.8 48 48-20.8 48-48 48z" fill="#2F4BFF" />
                     </svg>
 
-                    <h1>Inicio de sesión Biblioteca Mitologica.</h1>
+                    <h3>Inicio de sesión Biblioteca Mitologica.</h3>
 
                     <form className="d-flex flex-col" onSubmit={handleSubmit}>
                         <div className="mb-4">
