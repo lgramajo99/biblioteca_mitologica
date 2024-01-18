@@ -1,17 +1,13 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useAdminActions } from "../../redux/actions/adminAction";
+import { useAuthActions } from "../../redux/actions/authAction";
+
 
 function Login() {
     const isOpenLogin = useSelector(state => state.admin.openLogin)
     const { handleOpenLoginClick } = useAdminActions();
-
-
-    const verify = {
-        email: 'lucianogramajo@gmail.com',
-        password: 'asd123',
-        remember: false,
-    }
+    const { login } = useAuthActions();
 
     const [formData, setFormData] = useState({
         email: '',
@@ -29,17 +25,25 @@ function Login() {
         });
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        if (formData.email === verify.email &&
-            formData.password === verify.password) {
+        const user = await login({
+            email: formData.email,
+            password: formData.password,
+        });
 
+        if (user) {
             console.log("Inicio de sesión exitoso.")
             handleOpenLoginClick()
+            setFormData({
+                email: '',
+                password: '',
+                remember: false,
+            });
+
         } else {
             console.log('Credenciales incorrectas')
         }
-        console.log(formData)
     }
 
     return (
@@ -61,15 +65,19 @@ function Login() {
 
                     <h3 className="mb-4">Inicio de sesión Biblioteca Mitologica.</h3>
 
-                    <form className="d-flex flex-col" onSubmit={handleSubmit}>
+                    <form
+                        className="d-flex flex-col"
+                        onSubmit={handleSubmit}>
+
                         <div className="mb-4">
-                            <label className="block text-left text-gray-700 text-sm font-bold"
+                            <label
+                                className="block text-left text-gray-700 text-sm font-bold"
                                 htmlFor="email">
                                 Correo electrónico *
                             </label>
                             <input
                                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-                                placeholder="Example: ejemplo@email.com"
+                                placeholder="Example: example@email.com"
                                 type="email"
                                 name="email"
                                 id="email"
@@ -81,7 +89,8 @@ function Login() {
                         </div>
 
                         <div className="mb-4">
-                            <label className="block text-left text-gray-700 text-sm font-bold"
+                            <label
+                                className="block text-left text-gray-700 text-sm font-bold"
                                 htmlFor="password">
                                 Contraseña *
                             </label>
@@ -99,25 +108,30 @@ function Login() {
                         </div>
 
                         <div className="mb-4 flex items-center">
-                            <input className="mr-2 leading-tight"
+                            <input
+                                className="mr-2 leading-tight"
                                 type="checkbox"
                                 id="remember"
                                 name="remember"
                                 checked={formData.remember}
                                 onChange={handleInputChange} />
 
-                            <label className="text-sm text-gray-700" htmlFor="remember">
+                            <label
+                                className="text-sm text-gray-700"
+                                htmlFor="remember">
                                 Recordarme
                             </label>
                         </div>
                         <div className="flex justify-end gap-x-2">
-                            <button className="px-4 py-2 bg-slate-500 text-white rounded-md hover:bg-slate-600 focus:outline-none"
+                            <button
+                                className="px-4 py-2 bg-slate-500 text-white rounded-md hover:bg-slate-600 focus:outline-none"
                                 type="button"
                                 onClick={handleOpenLoginClick}>
                                 Cerrar
                             </button>
 
-                            <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+                            <button
+                                className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
                                 type="submit">
                                 Iniciar sesión
                             </button>
