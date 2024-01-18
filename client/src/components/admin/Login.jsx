@@ -31,7 +31,15 @@ function Login() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // console.log(formData)
+        if (formData.email === verify.email &&
+            formData.password === verify.password) {
+
+            console.log("Inicio de sesión exitoso.")
+            handleOpenLoginClick()
+        } else {
+            console.log('Credenciales incorrectas')
+        }
+        console.log(formData)
     }
 
     return (
@@ -57,7 +65,7 @@ function Login() {
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold"
                                 htmlFor="password">
-                                Correo electrónico
+                                Correo electrónico *
                             </label>
                             <input
                                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
@@ -65,6 +73,7 @@ function Login() {
                                 type="email"
                                 name="email"
                                 id="email"
+                                required
                                 value={formData.email}
                                 onChange={handleInputChange}
                             />
@@ -73,7 +82,7 @@ function Login() {
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold"
                                 htmlFor="password">
-                                Contraseña
+                                Contraseña *
                             </label>
                             <input
                                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
@@ -82,33 +91,33 @@ function Login() {
                                 name="password"
                                 id="password"
                                 autoComplete="currentPassword"
+                                required
                                 value={formData.password}
                                 onChange={handleInputChange}
                             />
                         </div>
 
                         <div className="mb-4 flex items-center">
-                            <input
-                                className="mr-2 leading-tight"
+                            <input className="mr-2 leading-tight"
                                 type="checkbox"
                                 id="remember"
                                 name="remember"
                                 checked={formData.remember}
-                                onChange={handleInputChange}
-                            />
+                                onChange={handleInputChange} />
+
                             <label className="text-sm text-gray-700" htmlFor="remember">
-                                Recordar
+                                Recordarme
                             </label>
                         </div>
                         <div className="flex justify-end gap-x-2">
-                            <button
-                                className="px-4 py-2 bg-slate-500 text-white rounded-md hover:bg-slate-600 focus:outline-none"
+                            <button className="px-4 py-2 bg-slate-500 text-white rounded-md hover:bg-slate-600 focus:outline-none"
+                                type="button"
                                 onClick={handleOpenLoginClick}>
-
                                 Cerrar
                             </button>
 
-                            <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                            <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+                                type="submit">
                                 Iniciar sesión
                             </button>
                         </div>
