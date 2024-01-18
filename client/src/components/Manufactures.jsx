@@ -5,7 +5,7 @@ function Manufactures({ seccion }) {
 
     return (
         <section>
-            <h1>Seccion articulos: {seccion}</h1>
+            <h2>Seccion articulos: {seccion}</h2>
 
             <article className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {cards.map((card, index) => <div key={index}><Card /></div>)}
