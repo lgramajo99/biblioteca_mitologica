@@ -7,6 +7,7 @@ import Directory from './pages/Directory'
 import Home from './pages/Home'
 import ErrorPage from './pages/ErrorPage';
 import ArticleContainer from './pages/ArticleContainer';
+import Biblioteca from './pages/Biblioteca';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/directory" element={<Directory />} />
         <Route path="/article" element={<ArticlePost />} />
         <Route path='/articulo-prueba' element={<ArticleContainer />} />
+        <Route path='/biblioteca' element={<Biblioteca />} />
       </Routes>
       <Footer />
     </div >

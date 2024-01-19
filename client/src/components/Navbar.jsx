@@ -22,7 +22,7 @@ const Navbar = () => {
                 {/* Menu */}
                 <div className="hidden md:flex space-x-4">
                     <a href="/" className="text-white">Inicio</a>
-                    <a href="/directorio" className="text-white">Directorio</a>
+                    <a href="/biblioteca" className="text-white">Biblioteca</a>
                     <a href="/nosotros" className="text-white">Nosotros</a>
                     <a href='#' className='' onClick={handleOpenLoginClick}>
                         < svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000">

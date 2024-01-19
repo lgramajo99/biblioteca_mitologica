@@ -31,7 +31,7 @@ function Manufactures({ seccion }) {
             {status === 'loading' && <Loading />}
 
             {status === 'succeeded' && (
-                <article className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                <article className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     {sortedData.map((cardData) => (
                         <Card key={cardData.id} data={cardData} />
                     ))}
