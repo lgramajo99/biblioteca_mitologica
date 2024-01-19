@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import Card from "./Card";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchArticles } from "../redux/reducers/articleReducer";
@@ -13,15 +13,26 @@ function Manufactures({ seccion }) {
         dispatch(fetchArticles());
     }, [dispatch]);
 
+    const sortedData = useMemo(() => {
+        if (seccion === 'Mas recientes') {
+            return [...data].sort((a, b) => new Date(b.fecha_creacion) - new Date(a.fecha_creacion));
+        } else if (seccion === 'Mas vistos') {
+            return [...data].sort((a, b) => b.contador_vistas - a.contador_vistas);
+        } else {
+            return data;
+        }
+    }, [seccion, data]);
+
+
     return (
-        <section>
+        <section className="mb-10">
             <h2>Seccion articulos: {seccion}</h2>
 
             {status === 'loading' && <Loading />}
 
             {status === 'succeeded' && (
                 <article className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                    {data.map((cardData) => (
+                    {sortedData.map((cardData) => (
                         <Card key={cardData.id} data={cardData} />
                     ))}
                 </article>

@@ -26,7 +26,14 @@ const initialState = {
 const articleSlice = createSlice({
     name: 'article',
     initialState,
-    reducers: {},
+    reducers: {
+        sortByDate: (state) => {
+            state.data = [...state.data].sort((a, b) => new Date(b.fecha_creacion) - new Date(a.fecha_creacion));
+        },
+        sortByViews: (state) => {
+            state.data = [...state.data].sort((a, b) => b.contador_vistas - a.contador_vistas);
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(fetchArticles.pending, (state) => {
@@ -34,7 +41,7 @@ const articleSlice = createSlice({
             })
             .addCase(fetchArticles.fulfilled, (state, action) => {
                 state.status = 'succeeded';
-                state.data = action.payload ;
+                state.data = action.payload;
             })
             .addCase(fetchArticles.rejected, (state, action) => {
                 state.status = 'error';
@@ -43,7 +50,7 @@ const articleSlice = createSlice({
     }
 })
 
-export const { reducer: articleReducer } = articleSlice;
+export const { reducer: articleReducer, actions: { sortByDate, sortByViews } } = articleSlice;
 
 // Selectores
 // export const selectArticlesByDate = state => state.article.articles.sort((a, b) => new Date(a.fecha_creacion) - new Date(b.fecha_creacion));
