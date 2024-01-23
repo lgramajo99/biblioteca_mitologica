@@ -9,11 +9,13 @@ import ErrorPage from './pages/ErrorPage';
 import ArticleContainer from './pages/ArticleContainer';
 import Biblioteca from './pages/Biblioteca';
 import Dashboard from './pages/admin/Dashboard';
+import Login from './components/admin/Login';
 
 function App() {
   return (
     <div>
       <Navbar />
+      <Login />
       <Routes>
         <Route path='*' element={<ErrorPage />} />
         <Route path="/" exact element={<Home />} />
