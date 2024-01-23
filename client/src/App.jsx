@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import ErrorPage from './pages/ErrorPage';
 import ArticleContainer from './pages/ArticleContainer';
 import Biblioteca from './pages/Biblioteca';
+import Dashboard from './pages/admin/Dashboard';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/article" element={<ArticlePost />} />
         <Route path='/articulo-prueba' element={<ArticleContainer />} />
         <Route path='/biblioteca' element={<Biblioteca />} />
+        <Route path='/administracion' element={<Dashboard />} />
       </Routes>
       <Footer />
     </div >
