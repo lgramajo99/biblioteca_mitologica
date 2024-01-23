@@ -1,9 +1,14 @@
 import penSquare from '../../assets/svg/penSquare.svg'
 import trash from '../../assets/svg/trash.svg'
 import arrowSquare from '../../assets/svg/arrowSquare.svg'
+import { Link } from 'react-router-dom'
 
-function CardA({ data }) {
+
+function ElementList({ data }) {
     const { id, titulo, imagenes } = data;
+    const res = titulo.replace(/[^a-zA-Z0-9]/g, '-');
+    const resUrl = res.replace(/-+$/, '');
+
 
     return (
         <div className="container m-auto p-2" key={id}>
@@ -23,17 +28,19 @@ function CardA({ data }) {
                 {/* ---------------------------- */}
                 <div className="w-5/12 md:w-3/12 text-end">
 
-                    <button className="px-2"
+                    <button className="px-1 transition transform hover:scale-110 focus:outline-none"
                         type="button" >
-                        <img src={arrowSquare} alt="arrowSquare" />
+                        <Link to={resUrl}>
+                            <img src={arrowSquare} alt="arrowSquare" />
+                        </Link>
                     </button>
 
-                    <button className="px-2"
+                    <button className="px-1 transition transform hover:scale-110 focus:outline-none"
                         type="button" >
                         <img src={penSquare} alt="pen" />
                     </button>
 
-                    <button className="px-2"
+                    <button className="px-1 transition transform hover:scale-110 focus:outline-none"
                         type="button" >
                         <img src={trash} alt="trash" />
                     </button>
@@ -43,4 +50,4 @@ function CardA({ data }) {
     );
 }
 
-export default CardA;
+export default ElementList;

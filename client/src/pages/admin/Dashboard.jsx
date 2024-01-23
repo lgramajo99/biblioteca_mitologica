@@ -1,9 +1,8 @@
 import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import Loading from "../../components/Loading";
 import { fetchArticles } from "../../redux/reducers/articleReducer";
-import CardA from "../../components/admin/CardA";
+import ElementList from "../../components/admin/ElementList";
 
 function Dashboard() {
     const { data, status, error } = useSelector(state => state.article);
@@ -16,16 +15,18 @@ function Dashboard() {
 
     return (
         <div>
-            <h1>Bashboard de los BM</h1>
+            <h1 className="text-center my-4">Bashboard de los BM</h1>
 
-
+            {status === 'loading' && <Loading />}
             {status === 'succeeded' && (
                 <article className="">
                     {data.map((cardData) => (
-                        <CardA key={cardData.id} data={cardData} />
+                        <ElementList key={cardData.id} data={cardData} />
                     ))}
                 </article>
             )}
+            {status === 'error' && <p>Error al cargar: {error}</p>}
+
         </div>
     )
 }
