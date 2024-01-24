@@ -1,15 +1,16 @@
-import { useState } from "react";
+import { useSelector } from 'react-redux';
 import pen from "../../assets/svg/pen.svg"
 
 function ElementBtnMenu({ image = pen, alt, txt }) {
-    const [displayed, setDisplayed] = useState(false);
+    const displayedMenu = useSelector(state => state.admin.displayedMenu)
 
     return (
-        <li className="rounded-md">
+        <li>
             <button type="button"
-                className="flex items-center py-1 px-2 transition-colors duration-300 ease-in-out hover:bg-gray-800 focus:outline-none">
+                title={txt}
+                className="flex px-2 py-1 items-center text-start w-full transition-colors duration-500 ease-in-out hover:bg-gray-600 focus:outline-none">
                 <img src={image} alt={alt} />
-                {displayed && <span>{txt}</span>}
+                {displayedMenu && <span className="font-bold truncate">{txt}</span>}
             </button>
         </li>
     )

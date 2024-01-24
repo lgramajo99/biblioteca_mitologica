@@ -4,18 +4,18 @@ import arrowSquare from '../../assets/svg/arrowSquare.svg'
 import { Link } from 'react-router-dom'
 
 
-function ElementList({ data }) {
+function ElementListPosts({ data }) {
     const { id, titulo, imagenes } = data;
     const res = titulo.replace(/[^a-zA-Z0-9]/g, '-');
     const resUrl = res.replace(/-+$/, '');
 
 
     return (
-        <div className="container m-auto p-2" key={id}>
+        <div className="m-auto py-2" key={id}>
             <div className="flex w-12/12 bg-slate-200 shadow-lg white rounded-lg shadow-black h-20 min-h-20 justify-end items-center">
 
                 {/* ---------------------------- */}
-                <div className="relative w-2/12 h-full  overflow-hidden">
+                <div className="relative w-2/12 h-full overflow-hidden">
                     <img src={imagenes?.imagen}
                         alt={imagenes?.alt}
                         className="object-cover object-center w-full h-full rounded"
@@ -50,4 +50,4 @@ function ElementList({ data }) {
     );
 }
 
-export default ElementList;
+export default ElementListPosts;

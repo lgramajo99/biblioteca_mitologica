@@ -1,5 +1,5 @@
 import './App.css'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import ArticlePost from './components/admin/ArticlePost'
@@ -12,20 +12,24 @@ import Dashboard from './pages/admin/Dashboard';
 import Login from './components/admin/Login';
 
 function App() {
+  const location = useLocation();
+  const renderIfNot = location.pathname !== '/administracion';
+
   return (
     <div>
-      <Navbar />
+      {renderIfNot && <Navbar />}
       <Login />
       <Routes>
         <Route path='*' element={<ErrorPage />} />
-        <Route path="/" exact element={<Home />} />
+        <Route index path="/" exact element={<Home />} />
         <Route path="/directory" element={<Directory />} />
         <Route path="/article" element={<ArticlePost />} />
         <Route path='/articulo-prueba' element={<ArticleContainer />} />
         <Route path='/biblioteca' element={<Biblioteca />} />
+
         <Route path='/administracion' element={<Dashboard />} />
       </Routes>
-      <Footer />
+      {renderIfNot && <Footer />}
     </div >
   )
 }

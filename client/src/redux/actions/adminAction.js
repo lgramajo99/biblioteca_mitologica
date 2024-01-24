@@ -10,8 +10,13 @@ export const useAdminActions = () => {
         dispatch(adminActions.toggleOpenLogin());
     };
 
+    const handleDisplayedMenu = () => {
+        dispatch(adminActions.toggleDisplayedMenu())
+    }
+
     return {
         handleOpenLoginClick,
+        handleDisplayedMenu,
         // Otras acciones si es necesario
     };
 };
