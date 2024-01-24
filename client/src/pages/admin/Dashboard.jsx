@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Loading from "../../components/Loading";
 import { fetchArticles } from "../../redux/reducers/articleReducer";
 import ElementList from "../../components/admin/ElementList";
+import DashboardMenu from "../../components/dashboard/DashboardMenu";
 
 function Dashboard() {
     const { data, status, error } = useSelector(state => state.article);
@@ -16,6 +17,8 @@ function Dashboard() {
     return (
         <div>
             <h1 className="text-center my-4">Bashboard de los BM</h1>
+
+            <DashboardMenu />
 
             {status === 'loading' && <Loading />}
             {status === 'succeeded' && (
