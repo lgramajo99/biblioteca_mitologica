@@ -12,7 +12,8 @@ import moon from "../../assets/svg/moon.svg"
 import squarePoll from "../../assets/svg/square-poll.svg"
 import users from "../../assets/svg/users.svg"
 
-function DashboardMenu() {
+function DashboardMenu({ seccion }) {
+
     const { handleDisplayedMenu, handleThemeMode } = useAdminActions()
     const { displayedMenu, themeChangeMode } = useSelector(state => state.admin)
 
@@ -28,19 +29,19 @@ function DashboardMenu() {
                 {/* Funcionalidades de control */}
                 <ElementBtnMenu alt="usuario" txt="Luciano G." />
 
-                <ElementBtnMenu image={addFile} alt="Crear publicacion" txt="Crear Publicacion" />
-                <ElementBtnMenu image={listUl} alt="listUl" txt="Lista de publicaciones" />
-                <ElementBtnMenu image={listUl} alt="listUl" txt="Lista de categorias" />
+                <ElementBtnMenu image={addFile} alt="Crear publicacion" txt="Crear Publicacion" to={"agregar-publicacion"} />
+                <ElementBtnMenu image={listUl} alt="listUl" txt="Lista de publicaciones" to={"lista-publicacion"} />
+                <ElementBtnMenu image={listUl} alt="listUl" txt="Lista de categorias" to={"lista-categoria"} />
                 <br />
 
                 {/* Estadisticas y seguridad */}
-                <ElementBtnMenu image={users} alt="control de usuario" txt="Control de usuarios" />
-                <ElementBtnMenu image={chartPie} alt="listUl" txt="Estadisticas generales" />
-                <ElementBtnMenu image={squarePoll} alt="listUl" txt="Registro de actividades" />
+                <ElementBtnMenu image={users} alt="control de usuario" txt="Control de usuarios" to={"control-usuario"} />
+                <ElementBtnMenu image={chartPie} alt="listUl" txt="Estadisticas generales" to={"estadisticas-generales"} />
+                <ElementBtnMenu image={squarePoll} alt="listUl" txt="Registro de actividades" to={"registro-actividades"} />
                 <br />
 
                 {/* Funcionalidades generales y configuracion del sitio*/}
-                <ElementBtnMenu image={calendar} alt="listUl" txt="Calendario" />
+                <ElementBtnMenu image={calendar} alt="listUl" txt="Calendario" to={"calendario"} />
                 <ElementBtnMenu image={themeChangeMode ? moon : sun} alt="Dark Mode" txt="Dark Mode" />
                 <br />
 

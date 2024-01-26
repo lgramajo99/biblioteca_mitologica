@@ -5,6 +5,7 @@ const initialState = {
     openLogin: true,
     displayedMenu: true,
     themeChangeMode: true, // true es claro | false es oscuro
+    urlIs: 'undefided',
 };
 
 const adminSlice = createSlice({
@@ -19,7 +20,7 @@ const adminSlice = createSlice({
         },
         toggleThemeMode: (state) => {
             state.themeChangeMode = !state.themeChangeMode;
-        }
+        },
     },
 });
 

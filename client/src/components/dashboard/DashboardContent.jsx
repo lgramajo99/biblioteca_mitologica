@@ -1,26 +1,38 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchArticles } from "../../redux/reducers/articleReducer";
-import ElementListPosts from "../admin/ElementListPosts";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { Suspense, lazy } from 'react';
+import Loading from '../Loading';
+import ErrorPage from '../../pages/ErrorPage';
+
+const SeccionUno = lazy(() => import('../admin/SeccionUno'));
+const SeccionDos = lazy(() => import('../admin/SeccionDos'));
+const ArticlePost = lazy(() => import('../admin/ArticlePost'));
+
+const sections = {
+    '/administracion/seccion-1': SeccionUno,
+    '/administracion/seccion-2': SeccionDos,
+    '/administracion/crear-publicacion': ArticlePost,
+};
+
+const getSectionComponent = (pathname) => {
+    return sections[pathname] || null;
+}
 
 function DashboardContent() {
-    const { data, status, error } = useSelector(state => state.article);
-    const displayedMenu = useSelector(state => state.admin.displayedMenu)
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(fetchArticles());
-    }, [dispatch]);
-
+    const { displayedMenu } = useSelector(state => state.admin);
+    const location = useLocation();
+    const SectionComponent = getSectionComponent(location.pathname);
 
     return (
-        <section className={`bg-slate-300 container w-full h-screen  ${displayedMenu ? "ml-80" : "ml-20"}`}>
-            <h1 className="text-center" > Bashboard de los BM</h1 >
+        <section className={`bg-slate-300 container w-full h-screen ${displayedMenu ? 'ml-80' : 'ml-20'}`}>
+            <h1 className="text-center">Dashboard de los BM</h1>
 
-
-
-        </section >
-    )
+            <Suspense fallback={<Loading />}>
+                {SectionComponent ? <SectionComponent /> : <ErrorPage />}
+            </Suspense>
+        </section>
+    );
 }
 
 export default DashboardContent;
