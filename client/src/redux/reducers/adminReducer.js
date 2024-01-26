@@ -4,6 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
     openLogin: true,
     displayedMenu: true,
+    themeChangeMode: true, // true es claro | false es oscuro
 };
 
 const adminSlice = createSlice({
@@ -15,6 +16,9 @@ const adminSlice = createSlice({
         },
         toggleDisplayedMenu: (state) => {
             state.displayedMenu = !state.displayedMenu;
+        },
+        toggleThemeMode: (state) => {
+            state.themeChangeMode = !state.themeChangeMode;
         }
     },
 });

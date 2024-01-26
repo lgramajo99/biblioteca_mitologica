@@ -13,7 +13,7 @@ import Login from './components/admin/Login';
 
 function App() {
   const location = useLocation();
-  const renderIfNot = location.pathname !== '/administracion';
+  const renderIfNot = !location.pathname.startsWith('/administracion');
 
   return (
     <div>
@@ -27,7 +27,7 @@ function App() {
         <Route path='/articulo-prueba' element={<ArticleContainer />} />
         <Route path='/biblioteca' element={<Biblioteca />} />
 
-        <Route path='/administracion' element={<Dashboard />} />
+        <Route path='/administracion/:seccion' element={<Dashboard />} />
       </Routes>
       {renderIfNot && <Footer />}
     </div >

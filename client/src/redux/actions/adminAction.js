@@ -14,9 +14,14 @@ export const useAdminActions = () => {
         dispatch(adminActions.toggleDisplayedMenu())
     }
 
+    const handleThemeMode = () => {
+        dispatch(adminActions.toggleThemeMode());
+    }
+
     return {
         handleOpenLoginClick,
         handleDisplayedMenu,
+        handleThemeMode,
         // Otras acciones si es necesario
     };
 };
