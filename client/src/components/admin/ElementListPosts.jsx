@@ -12,7 +12,7 @@ function ElementListPosts({ data }) {
 
     return (
         <div className="m-auto py-2" key={id}>
-            <div className="flex w-12/12 bg-slate-200 shadow-lg white rounded-lg shadow-black h-20 min-h-20 justify-end items-center">
+            <div className="flex w-12/12 bg-slate-200 shadow-lg rounded-lg shadow-black h-20 min-h-20 justify-end items-center">
 
                 {/* ---------------------------- */}
                 <div className="relative w-2/12 h-full overflow-hidden">
