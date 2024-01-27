@@ -29,9 +29,9 @@ function DashboardMenu({ seccion }) {
                 {/* Funcionalidades de control */}
                 <ElementBtnMenu alt="usuario" txt="Luciano G." />
 
-                <ElementBtnMenu image={addFile} alt="Crear publicacion" txt="Crear Publicacion" to={"agregar-publicacion"} />
-                <ElementBtnMenu image={listUl} alt="listUl" txt="Lista de publicaciones" to={"lista-publicacion"} />
-                <ElementBtnMenu image={listUl} alt="listUl" txt="Lista de categorias" to={"lista-categoria"} />
+                <ElementBtnMenu image={addFile} alt="Crear publicacion" txt="Crear Publicacion" to={"crear-publicacion"} />
+                <ElementBtnMenu image={listUl} alt="listUl" txt="Lista de publicaciones" to={"lista-publicaciones"} />
+                <ElementBtnMenu image={listUl} alt="listUl" txt="Lista de categorias" to={"lista-categorias"} />
                 <br />
 
                 {/* Estadisticas y seguridad */}

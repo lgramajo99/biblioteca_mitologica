@@ -9,6 +9,7 @@ const SeccionDos = lazy(() => import('../admin/SeccionDos'));
 const ArticlePost = lazy(() => import('../admin/ArticlePost'));
 const ListCategories = lazy(() => import('../dashboard/ListCategories'));
 const ListPost = lazy(() => import('../dashboard/ListPost'));
+const calendar = lazy(() => import('../dashboard/Calendar'))
 
 const sections = {
     '/administracion/seccion-1': SeccionUno,
@@ -16,6 +17,7 @@ const sections = {
     '/administracion/crear-publicacion': ArticlePost,
     '/administracion/lista-categorias': ListCategories,
     '/administracion/lista-publicaciones': ListPost,
+    '/administracion/calendario': calendar,
 };
 
 const getSectionComponent = (pathname) => {
