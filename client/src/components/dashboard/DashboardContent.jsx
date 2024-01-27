@@ -7,11 +7,15 @@ import ErrorPage from '../../pages/ErrorPage';
 const SeccionUno = lazy(() => import('../admin/SeccionUno'));
 const SeccionDos = lazy(() => import('../admin/SeccionDos'));
 const ArticlePost = lazy(() => import('../admin/ArticlePost'));
+const ListCategories = lazy(() => import('../dashboard/ListCategories'));
+const ListPost = lazy(() => import('../dashboard/ListPost'));
 
 const sections = {
     '/administracion/seccion-1': SeccionUno,
     '/administracion/seccion-2': SeccionDos,
     '/administracion/crear-publicacion': ArticlePost,
+    '/administracion/lista-categorias': ListCategories,
+    '/administracion/lista-publicaciones': ListPost,
 };
 
 const getSectionComponent = (pathname) => {
