@@ -1,18 +1,9 @@
 import { useSelector } from "react-redux";
 import { useAdminActions } from '../../redux/actions/adminAction';
-import addFile from "../../assets/svg/add-file.svg"
-import calendar from "../../assets/svg/calendar.svg"
-import chartPie from "../../assets/svg/chart-pie.svg"
-import doorOpen from "../../assets/svg/door-open.svg"
 import ElementBtnMenu from "./ElementBtnMenu";
-import listUl from "../../assets/svg/list-ul.svg"
-import menu from "../../assets/svg/menu.svg"
-import sun from "../../assets/svg/sun.svg"
-import moon from "../../assets/svg/moon.svg"
-import squarePoll from "../../assets/svg/square-poll.svg"
-import users from "../../assets/svg/users.svg"
+import { addFile, listUl, users, chartPie, squarePoll, calendar, doorOpen, menu, sun, moon } from "../../assets/index";
 
-function DashboardMenu({ seccion }) {
+function DashboardMenu() {
 
     const { handleDisplayedMenu, handleThemeMode } = useAdminActions()
     const { displayedMenu, themeChangeMode } = useSelector(state => state.admin)
@@ -20,7 +11,10 @@ function DashboardMenu({ seccion }) {
     return (
         <nav className={`fixed top-0 left-0 h-full bg-slate-500 shadow-md ${displayedMenu ? "w-80" : "w-20"} overflow-y-auto`} >
 
-            <button type="button" className="mx-1 p-1 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500 transform transition-transform hover:scale-95 active:scale-90" onClick={handleDisplayedMenu}>
+            <button type="button"
+                className="mx-1 p-1 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500 transform transition-transform hover:scale-95 active:scale-90"
+                onClick={handleDisplayedMenu}>
+
                 <img src={menu} alt="menu" />
             </button>
 
@@ -42,9 +36,14 @@ function DashboardMenu({ seccion }) {
 
                 {/* Funcionalidades generales y configuracion del sitio*/}
                 <ElementBtnMenu image={calendar} alt="listUl" txt="Calendario" to={"calendario"} />
-                <ElementBtnMenu image={themeChangeMode ? moon : sun} alt="Dark Mode" txt="Dark Mode" />
-                <br />
+                {/* <ElementBtnMenu image={themeChangeMode ? moon : sun} alt="Dark Mode" txt="Dark Mode" /> */}
 
+                <button type="button" className="flex px-2 py-1 items-center text-start w-full transition-colors duration-500 ease-in-out hover:bg-gray-600 focus:outline-none" onClick={handleThemeMode}>
+                    <img src={themeChangeMode ? moon : sun} alt='Change mode' />
+                    {displayedMenu && <span className="font-bold truncate">{themeChangeMode ? 'Dark Mode' : 'Light mode'}</span>}
+                </button>
+
+                <br />
                 <ElementBtnMenu image={doorOpen} alt="listUl" txt="Log Out" />
             </ul>
 
