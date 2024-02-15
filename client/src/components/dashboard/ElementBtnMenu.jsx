@@ -7,11 +7,7 @@ function ElementBtnMenu({ image = pen, alt, txt, to }) {
     const navigate = useNavigate()
 
     const handleRedirect = () => {
-        if (to) {
-            navigate(`/administracion/${to}`);
-        } else {
-            console.log('Deslogeado');
-        }
+        navigate(`/administracion/${to}`);
     };
 
     return (
@@ -20,7 +16,7 @@ function ElementBtnMenu({ image = pen, alt, txt, to }) {
                 type="button"
                 title={txt}
                 onClick={handleRedirect}
-                className="flex px-2 py-1 items-center text-start w-full transition-colors duration-500 ease-in-out hover:bg-gray-600 focus:outline-none"
+                className="flex px-2 py-1 items-center text-start w-full transition duration-300 ease-in-out hover:bg-darkPurple focus:bg-darkPurple focus:outline-none"
             >
                 <img src={image} alt={alt} />
                 {displayedMenu && <span className="font-bold truncate">{txt}</span>}

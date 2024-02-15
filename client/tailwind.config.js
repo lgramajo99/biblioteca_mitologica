@@ -17,8 +17,21 @@ export default {
       fontFamily: {
         poppins: ['Poppins', 'sans'],
       },
+      colors: {
+        deepPurple: '#231E2F', //primario Dark
+        darkPurple: '#433e4d', //secundario Dark
+        grayishPurple: '#65606e', //acento Dark
+
+        purpleLight: '#87005b', //primario Light
+      }
     },
   },
   plugins: [],
 }
 
+/*  Colores elegidos :
+ #2A213C
+ #231E2F
+ #29222E
+ #1D1A27
+*/

@@ -27,7 +27,8 @@ export const useAuthActions = () => {
     };
 
     const logout = () => {
-        dispatch(authActions.logout());
+        dispatch(authActions.logOut());
+        console.info("Deslogeados");
     };
 
     return {
