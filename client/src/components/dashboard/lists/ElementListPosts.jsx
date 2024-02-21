@@ -1,6 +1,6 @@
-import penSquare from '../../assets/svg/penSquare.svg'
-import trash from '../../assets/svg/trash.svg'
-import arrowSquare from '../../assets/svg/arrowSquare.svg'
+import penSquare from '../assets/svg/penSquare.svg'
+import trash from '../assets/svg/trash.svg'
+import arrowSquare from '../assets/svg/arrowSquare.svg'
 import { Link } from 'react-router-dom'
 
 

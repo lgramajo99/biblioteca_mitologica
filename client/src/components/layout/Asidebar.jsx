@@ -1,4 +1,4 @@
-function AsideBar() {
+function Asidebar() {
     return (<aside className="bg-slate-100">
         <h3>Lista de mitologias</h3>
 
@@ -17,4 +17,4 @@ function AsideBar() {
     </aside>)
 }
 
-export default AsideBar;
+export default Asidebar;

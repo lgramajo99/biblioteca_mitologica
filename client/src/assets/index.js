@@ -1,12 +1,14 @@
-export { default as addFile } from './svg/add-file.svg';
-export { default as listUl } from './svg/list-ul.svg';
-export { default as users } from './svg/users.svg';
-export { default as chartPie } from './svg/chart-pie.svg';
-export { default as squarePoll } from './svg/square-poll.svg';
-export { default as calendar } from './svg/calendar.svg';
+export { default as addFile } from './svg/utilities/add-file.svg'
+export { default as listUl } from './svg/utilities/list-ul.svg';
+export { default as users } from './svg/utilities/users.svg';
+export { default as chartPie } from './svg/utilities/chart-pie.svg';
+export { default as squarePoll } from './svg/utilities/square-poll.svg';
+export { default as calendar } from './svg/utilities/calendar.svg';
 
-export { default as doorOpen } from './svg/door-open.svg';
-export { default as menu } from './svg/menu.svg';
-export { default as sun } from './svg/sun.svg';
-export { default as moon } from './svg/moon.svg';
+export { default as doorOpen } from './svg/utilities/door-open.svg';
+export { default as menu } from './svg/utilities/menu.svg';
+export { default as sun } from './svg/utilities/sun.svg';
+export { default as moon } from './svg/utilities/moon.svg';
+
+export { default as pen } from './svg/utilities/pen.svg'
 

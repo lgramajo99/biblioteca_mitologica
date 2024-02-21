@@ -1,6 +1,6 @@
-import SearchForm from './SearchForm';
+import SearchForm from '../common/SearchForm';
 import { useSelector } from 'react-redux';
-import { useAdminActions } from '../redux/actions/adminAction';
+import { useAdminActions } from '../../redux/actions/adminAction';
 
 const Navbar = () => {
     const isOpenLogin = useSelector(state => state.admin.openLogin);

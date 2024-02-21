@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCategories } from "../../redux/reducers/categoryReducer";
-import ElementListCategories from "../admin/ElementListCategories";
-import Loading from "../../components/Loading";
+import { fetchCategories } from "../../../redux/reducers/categoryReducer";
+import ElementListCategories from "../lists/ElementListCategories";
+import Loading from "../../common/Loading";
 
 function ListCategories() {
     const dispatch = useDispatch();

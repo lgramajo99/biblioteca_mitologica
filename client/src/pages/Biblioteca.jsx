@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import PandoraFilter from "../components/PandoraFilter";
+import PandoraFilter from "../components/common/PandoraFilter";
 import { useEffect } from "react";
 import { fetchArticles } from "../redux/reducers/articleReducer";
 import Card from "../components/Card";
-import Loading from '../components/Loading'
+import Loading from '../components/common/Loading'
 
 function Biblioteca() {
     const { data, status, error } = useSelector(state => state.article);
@@ -13,7 +13,7 @@ function Biblioteca() {
         dispatch(fetchArticles());
     }, [dispatch]);
 
-    console.log(data)
+    // console.log(data)
 
     return (<section>
         <h2>Biblioteca completa de Mitologia</h2>

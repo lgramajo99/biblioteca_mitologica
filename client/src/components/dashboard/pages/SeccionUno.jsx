@@ -1,4 +1,4 @@
-import ElementListCategories from "./ElementListCategories";
+import ElementListCategories from "../lists/ElementListCategories";
 
 function SeccionUno() {
     return (<div>

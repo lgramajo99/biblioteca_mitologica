@@ -1,5 +1,5 @@
-import AsideBar from "../components/AsideBar";
-import Manufactures from "../components/Manufactures";
+import Asidebar from "../components/layout/AsideBar";
+import Manufactures from "../components/layout/Manufactures";
 
 function Home() {
     return (
@@ -11,7 +11,7 @@ function Home() {
                     <Manufactures seccion={'Mas vistos'} />
                 </article>
                 <aside className="w-0 md:w-3/12 lg:w-2/12">
-                    <AsideBar />
+                    <Asidebar />
                 </aside>
             </section >
         </section>

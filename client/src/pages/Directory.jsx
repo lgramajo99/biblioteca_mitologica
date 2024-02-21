@@ -1,6 +1,6 @@
 import Card from "../components/Card";
-import PandoraFilter from "../components/PandoraFilter";
-import Filter from "../components/PandoraFilter";
+import PandoraFilter from "../components/common/PandoraFilter";
+import Filter from "../components/common/PandoraFilter";
 
 function Directory() {
     const arrCards = Array.from({ length: 18 }, (_, index) => <Card key={index} />);

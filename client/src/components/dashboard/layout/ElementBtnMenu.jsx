@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import pen from "../../assets/svg/pen.svg"
+import { pen } from '../../../assets';
 import { useNavigate } from 'react-router-dom';
 
 function ElementBtnMenu({ image = pen, alt, txt, to }) {
@@ -19,7 +19,7 @@ function ElementBtnMenu({ image = pen, alt, txt, to }) {
                 className="flex px-2 py-1 items-center text-start w-full transition duration-300 ease-in-out hover:bg-darkPurple focus:bg-darkPurple focus:outline-none"
             >
                 <img src={image} alt={alt} />
-                {displayedMenu && <span className="font-bold truncate">{txt}</span>}
+                <span className={displayedMenu ? "font-bold truncate" : "hidden"}>{txt}</span>
             </button>
         </li>
     )

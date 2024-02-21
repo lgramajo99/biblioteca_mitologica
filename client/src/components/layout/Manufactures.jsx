@@ -1,8 +1,8 @@
 import { useEffect, useMemo } from "react";
-import Card from "./Card";
+import Card from "../Card";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchArticles } from "../redux/reducers/articleReducer";
-import Loading from "./Loading";
+import { fetchArticles } from "../../redux/reducers/articleReducer";
+import Loading from "../common/Loading";
 
 
 function Manufactures({ seccion }) {
