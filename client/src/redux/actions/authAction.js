@@ -4,19 +4,30 @@ import { useDispatch } from "react-redux";
 export const useAuthActions = () => {
     const dispatch = useDispatch();
 
-    const login = async ({ email, password }) => {
+
+    const verifyCredentials = async ({ email, password }) => {
+        // Para simplificar el ejemplo, dejaremos una verificación local
         const verify = {
             email: 'lucianogramajo@gmail.com',
             password: 'asd123',
+            isAdmin: true,
             user: 'Luciano'
         };
 
+        return verify.email === email && verify.password === password ? verify : null;
+    };
+
+
+    const login = async ({ email, password }) => {
         try {
-            if (email === verify.email && password === verify.password) {
-                dispatch(authActions.loginSuccess({ email: verify.email, user: verify.user, password: verify.password }));
-                return { email: verify.email, user: verify.user };
+            const user = await verifyCredentials({ email, password });
+            if (user) {
+                dispatch(authActions.loginSuccess({ email: user.email, user: user.user }));
+                console.info("Autenticación exitosa");
+                return { email: user.email, user: user.user };
             } else {
                 dispatch(authActions.loginFailure());
+                console.error("Credenciales incorrectas");
                 return null;
             }
         } catch (error) {

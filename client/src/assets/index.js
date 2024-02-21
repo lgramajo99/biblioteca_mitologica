@@ -15,4 +15,4 @@ export { default as arrowSquare } from './svg/utilities/arrow-square.svg'
 export { default as penSquare } from './svg/utilities/pen-square.svg'
 export { default as trash } from './svg/utilities/trash.svg'
 
-
+export {default as circleUser } from './svg/utilities/circle-user.svg';
