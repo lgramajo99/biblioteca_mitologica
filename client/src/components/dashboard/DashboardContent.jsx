@@ -1,41 +1,13 @@
 import { useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
-import { Suspense, lazy } from 'react';
-import Loading from '../Loading';
-import ErrorPage from '../../pages/ErrorPage';
-
-const SeccionUno = lazy(() => import('../admin/SeccionUno'));
-const SeccionDos = lazy(() => import('../admin/SeccionDos'));
-const ArticlePost = lazy(() => import('../admin/ArticlePost'));
-const ListCategories = lazy(() => import('../dashboard/ListCategories'));
-const ListPost = lazy(() => import('../dashboard/ListPost'));
-const calendar = lazy(() => import('../dashboard/Calendar'))
-
-const sections = {
-    '/administracion/seccion-1': SeccionUno,
-    '/administracion/seccion-2': SeccionDos,
-    '/administracion/crear-publicacion': ArticlePost,
-    '/administracion/lista-categorias': ListCategories,
-    '/administracion/lista-publicaciones': ListPost,
-    '/administracion/calendario': calendar,
-};
-
-const getSectionComponent = (pathname) => {
-    return sections[pathname] || null;
-}
+import { Outlet } from 'react-router-dom';
 
 function DashboardContent() {
     const { displayedMenu } = useSelector(state => state.admin);
-    const location = useLocation();
-    const SectionComponent = getSectionComponent(location.pathname);
 
     return (
-        <section className={`bg-slate-300 container w-full h-screen ${displayedMenu ? 'ml-80' : 'ml-20'}`}>
+        <section className={`bg-slate-300 container w-full h-screen transition-all duration-500 ${displayedMenu ? 'ml-80' : 'ml-20'}`}>
             <h1 className="text-center">Dashboard de los BM</h1>
-
-            <Suspense fallback={<Loading />}>
-                {SectionComponent ? <SectionComponent /> : <ErrorPage />}
-            </Suspense>
+            <Outlet />
         </section>
     );
 }
