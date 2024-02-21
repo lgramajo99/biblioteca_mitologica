@@ -1,4 +1,4 @@
-import { arrowSquare, trash, penSquare } from '../assets/index'
+import { arrowSquare, trash, penSquare } from '../../../assets/index'
 import { Link } from 'react-router-dom'
 
 
@@ -6,7 +6,6 @@ function ElementListPosts({ data }) {
     const { id, titulo, imagenes } = data;
     const res = titulo.replace(/[^a-zA-Z0-9]/g, '-');
     const resUrl = res.replace(/-+$/, '');
-
 
     return (
         <div className="m-auto py-2" key={id}>

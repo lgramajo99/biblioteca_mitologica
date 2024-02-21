@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchArticles } from "../../../redux/reducers/articleReducer";
-import ElementListPosts from "../../ElementListPosts";
+import ElementListPosts from '../lists/ElementListPosts';
 import Loading from "../../common/Loading";
 
 function ListPost() {
