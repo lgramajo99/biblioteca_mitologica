@@ -1,4 +1,4 @@
-import Card from "../components/Card";
+import Card from "../components/common/Card";
 import PandoraFilter from "../components/common/PandoraFilter";
 import Filter from "../components/common/PandoraFilter";
 

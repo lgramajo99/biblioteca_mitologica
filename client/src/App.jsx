@@ -9,10 +9,10 @@ import Biblioteca from './pages/Biblioteca';
 import Dashboard from './pages/Dashboard';
 import Login from './components/common/Login';
 // ----------Imports de los page dashboards----------
-import ArticlePost from './components/ArticlePost';
-import ListCategories from './components/ListCategories';
-import ListPost from './components/ListPost';
-import Calendar from './components/Calendar';
+import ArticlePost from './components/dashboard/pages/ArticlePost';
+import ListCategories from './components/dashboard/pages/ListCategories';
+import ListPost from './components/dashboard/pages/ListPost';
+import Calendar from './components/dashboard/pages/Calendar';
 
 function App() {
   const location = useLocation();

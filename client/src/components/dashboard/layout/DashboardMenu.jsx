@@ -21,8 +21,11 @@ function DashboardMenu() {
             </button>
 
             <ul className="overflow-hidden">
-                <button type="button" onClick={() => navigate(`/`)}>
-
+                <button
+                    type="button"
+                    className="w-full px-2 py-1 font-semibold transition-colors duration-300 ease-in-out rounded-md focus:outline-none focus:text-white hover:text-white overflow-hidden whitespace-nowrap"
+                    onClick={() => navigate(`/`)}
+                >
                     {displayedMenu ? "Biblioteca Mitologica" : "B|M"}
                 </button>
 

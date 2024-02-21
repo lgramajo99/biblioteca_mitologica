@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import PandoraFilter from "../components/common/PandoraFilter";
 import { useEffect } from "react";
 import { fetchArticles } from "../redux/reducers/articleReducer";
-import Card from "../components/Card";
+import Card from "../components/common/Card";
 import Loading from '../components/common/Loading'
 
 function Biblioteca() {

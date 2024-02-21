@@ -11,4 +11,8 @@ export { default as sun } from './svg/utilities/sun.svg';
 export { default as moon } from './svg/utilities/moon.svg';
 
 export { default as pen } from './svg/utilities/pen.svg'
+export { default as arrowSquare } from './svg/utilities/arrowSquare.svg'
+export { default as penSquare } from './svg/utilities/penSquare.svg'
+export { default as trash } from './svg/utilities/trash.svg'
+
 
