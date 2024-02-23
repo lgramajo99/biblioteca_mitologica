@@ -25,6 +25,12 @@
 }
 
 
+#toggle:checked+.dot {
+  transform: translateX(100%);
+  background-color: #68d391;
+  /* Color cuando está encendido */
+}
+
 /* #root {
   max-width: 1280px;
   margin: 0 auto;

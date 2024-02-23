@@ -4,6 +4,7 @@ import ElementBtnMenu from "./ElementBtnMenu";
 import { addFile, listUl, users, chartPie, squarePoll, calendar, doorOpen, menu, sun, moon } from "../../../assets/index";
 import { useAuthActions } from "../../../redux/actions/authAction";
 import { useNavigate } from "react-router-dom";
+import DarkModeSwitchButton from '../../common/DarkModeSwitchButton';
 
 function DashboardMenu() {
     const { handleDisplayedMenu, handleThemeMode } = useAdminActions();
@@ -20,7 +21,7 @@ function DashboardMenu() {
                 <img src={menu} alt="menu" />
             </button>
 
-            <ul className="overflow-hidden">
+            <ul className="overflow-hidden px-2 gap-y-2 flex flex-col">
                 <button
                     type="button"
                     className="w-full px-2 py-1 font-semibold transition-colors duration-300 ease-in-out rounded-md focus:outline-none focus:text-white hover:text-white overflow-hidden whitespace-nowrap"
@@ -39,22 +40,14 @@ function DashboardMenu() {
                 <ElementBtnMenu image={users} alt="control de usuario" txt="Control de usuarios" to={"control-usuario"} />
                 <ElementBtnMenu image={chartPie} alt="listUl" txt="Estadisticas generales" to={"estadisticas-generales"} />
                 <ElementBtnMenu image={squarePoll} alt="listUl" txt="Registro de actividades" to={"registro-actividades"} />
-                <br />
-
                 <ElementBtnMenu image={calendar} alt="listUl" txt="Calendario" to={"calendario"} />
-                <button type="button"
-                    className="flex px-2 py-1 items-center text-start w-full transition duration-300 ease-in-out hover:bg-darkPurple focus:bg-darkPurple focus:outline-none"
-                    onClick={handleThemeMode}>
-
-                    <img src={themeChangeMode ? moon : sun} alt='Change mode' className={themeChangeMode && 'filter invert'} />
-                    {displayedMenu && <span className="font-bold truncate">{themeChangeMode ? 'Dark Mode' : 'Light mode'}</span>}
-                </button>
+                <DarkModeSwitchButton />
                 <br />
                 <button type="button"
                     onClick={logout}
-                    className="flex px-2 py-1 items-center text-start w-full transition duration-300 ease-in-out hover:bg-darkPurple focus:bg-darkPurple focus:outline-none">
+                    className="flex items-center text-start w-full transition duration-300 ease-in-out hover:bg-darkPurple focus:bg-darkPurple focus:outline-none">
 
-                    <img src={doorOpen} alt='door open' className={themeChangeMode && 'filter invert'} />
+                    <img src={doorOpen} alt='door open' className={`${themeChangeMode ? 'filter invert' : ''}`} />
                     {displayedMenu && <span className="font-bold truncate">Cerrar sesión</span>}
                 </button>
 
