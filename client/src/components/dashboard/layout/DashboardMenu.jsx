@@ -11,8 +11,6 @@ function DashboardMenu() {
     const { displayedMenu, themeChangeMode } = useSelector(state => state.admin);
     const navigate = useNavigate()
 
-    console.log(themeChangeMode)
-
     return (
         <nav className={`fixed top-0 left-0 h-full bg-purpleLight dark:text-slate-300 dark:bg-deepPurple shadow-md transition-all duration-500 ${displayedMenu ? "w-80" : "w-20"} overflow-y-auto`} >
 

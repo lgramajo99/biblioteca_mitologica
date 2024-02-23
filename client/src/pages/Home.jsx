@@ -3,8 +3,11 @@ import Manufactures from "../components/layout/Manufactures";
 
 function Home() {
     return (
-        <section className="text-center sm:">
-            <h1 className="">Biblioteca mitologica</h1>
+        <section className="text-center">
+            <header>
+                <h1>Biblioteca Mitológica</h1>
+            </header>
+            
             <section className="flex flex-wrap">
                 <article className="w-full md:w-9/12 lg:w-10/12">
                     <Manufactures seccion={'Mas recientes'} />
