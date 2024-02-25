@@ -19,10 +19,10 @@ function DarkModeSwitchButton() {
 
                 <button
                     type="button"
-                    className={`flex items-center justify-between text-start w-16 h-8 bg-gray-300 rounded-full p-1 focus:outline-none ${themeChangeMode ? 'bg-blue-600' : ''}`}
+                    className={`flex items-center justify-between w-16 h-8 bg-gray-300 rounded-full  focus:outline-none dark:bg-blue-600`}
                     onClick={handleThemeMode}
                 >
-                    <div className={`w-6 h-6 rounded-full bg-white shadow-md flex items-center justify-center transition-transform transform ${themeChangeMode ? 'translate-x-full' : ''}`}>
+                    <div className={`w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center transition-transform transform dark:translate-x-full`}>
                         <img src={themeChangeMode ? moon : sun} alt={themeChangeMode ? "Sun" : "Moon"} className="w-4 h-4" />
                     </div>
                 </button>
