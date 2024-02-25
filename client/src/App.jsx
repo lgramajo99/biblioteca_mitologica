@@ -13,6 +13,7 @@ import ArticlePost from './components/dashboard/pages/ArticlePost';
 import ListCategories from './components/dashboard/pages/ListCategories';
 import ListPost from './components/dashboard/pages/ListPost';
 import Calendar from './components/dashboard/pages/Calendar';
+import PostEditor from './components/dashboard/pages/PostEditor';
 
 function App() {
   const location = useLocation();
@@ -31,7 +32,7 @@ function App() {
         <Route path="/biblioteca" element={<Biblioteca />} />
 
         <Route path="/administracion" element={<Dashboard />} >
-          <Route path="crear-publicacion" element={<ArticlePost />} />
+          <Route path="crear-publicacion" element={<PostEditor />} />
           <Route path="lista-categorias" element={<ListCategories />} />
           <Route path="lista-publicaciones" element={<ListPost />} />
           <Route path="calendario" element={<Calendar />} />
