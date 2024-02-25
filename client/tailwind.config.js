@@ -24,8 +24,8 @@ export default {
 
         darkPrimary: '#121212',
         darkSecondary: '#3D747F',
-        darkAcenture: '#CEC7BF',
-
+        darkAcenture: '#0f172acc;',
+        darkTxt: '#CEC7BF'
       }
     },
   },

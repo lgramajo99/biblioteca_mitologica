@@ -1,23 +1,18 @@
-import Asidebar from "../components/layout/AsideBar";
+import Asidebar from "../components/layout/Asidebar";
 import Manufactures from "../components/layout/Manufactures";
 
 function Home() {
     return (
-        <section className="text-center">
-            <header>
-                <h1>Biblioteca Mitológica</h1>
-            </header>
-            
-            <section className="flex flex-wrap">
-                <article className="w-full md:w-9/12 lg:w-10/12">
-                    <Manufactures seccion={'Mas recientes'} />
-                    <Manufactures seccion={'Mas vistos'} />
-                </article>
-                <aside className="w-0 md:w-3/12 lg:w-2/12">
-                    <Asidebar />
-                </aside>
-            </section >
-        </section>
+        <section className="flex flex-wrap text-center">
+            <article className="w-full md:w-9/12 lg:w-10/12">
+                <header>
+                    <h1>Biblioteca Mitológica</h1>
+                </header>
+                <Manufactures seccion={'Mas recientes'} />
+                <Manufactures seccion={'Mas vistos'} />
+            </article>
+            <Asidebar />
+        </section >
     )
 }
 

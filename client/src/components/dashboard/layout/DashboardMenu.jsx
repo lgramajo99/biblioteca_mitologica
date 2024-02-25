@@ -45,7 +45,7 @@ function DashboardMenu() {
                 <br />
                 <button type="button"
                     onClick={logout}
-                    className={`flex items-center w-full rounded-xl p-1 gap-2 transition duration-300 ease-in-out focus:font-bold focus:outline-none hover:font-bold hover:bg-purple-200 focus:bg-purple-200 dark:text-darkAcenture dark:hover:bg-darkSecondary dark:focus:bg-darkSecondary ${displayedMenu ? 'justify-start' : 'justify-center'}`}>
+                    className={`flex items-center w-full rounded-xl p-1 gap-2 transition duration-300 ease-in-out focus:font-bold focus:outline-none hover:font-bold hover:bg-purple-200 focus:bg-purple-200 dark:text-darkTxt dark:hover:bg-darkSecondary dark:focus:bg-darkSecondary ${displayedMenu ? 'justify-start' : 'justify-center'}`}>
                     <img src={doorOpen} alt='door open' className={`filter dark:invert`} />
                     {displayedMenu && <span className="font-bold truncate">Cerrar sesión</span>}
                 </button>

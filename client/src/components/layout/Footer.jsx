@@ -1,6 +1,6 @@
 function Footer() {
     return (
-        <footer className="bg-gray-800 text-white py-8 my-1">
+        <footer className="bg-gray-800 text-white py-8">
             <div className="container mx-auto flex flex-wrap justify-around items-center">
                 {/* Sección de redes sociales */}
                 <section>
