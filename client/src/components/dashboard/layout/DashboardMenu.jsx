@@ -13,7 +13,7 @@ function DashboardMenu() {
     const navigate = useNavigate()
 
     return (
-        <nav className={`fixed top-0 left-0 h-full bg-purpleLight dark:text-slate-300 dark:bg-deepPurple shadow-md transition-all duration-500 ${displayedMenu ? "w-80" : "w-20"} overflow-y-auto`} >
+        <nav className={`fixed top-0 left-0 h-full bg-purple-700 dark:text-slate-300 dark:bg-darkPrimary shadow-md transition-all duration-500 ${displayedMenu ? "w-80" : "w-20"} overflow-y-auto`} >
 
             <button type="button"
                 className="mx-1 p-1 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500 transform transition-transform hover:scale-95 active:scale-90"
@@ -45,8 +45,7 @@ function DashboardMenu() {
                 <br />
                 <button type="button"
                     onClick={logout}
-                    className="flex items-center text-start w-full transition duration-300 ease-in-out hover:bg-darkPurple focus:bg-darkPurple focus:outline-none">
-
+                    className={`flex items-center w-full rounded-xl p-1 gap-2 transition duration-300 ease-in-out focus:font-bold focus:outline-none hover:font-bold hover:bg-purple-200 focus:bg-purple-200 dark:text-darkAcenture dark:hover:bg-darkSecondary dark:focus:bg-darkSecondary ${displayedMenu ? 'justify-start' : 'justify-center'}`}>
                     <img src={doorOpen} alt='door open' className={`${themeChangeMode ? 'filter invert' : ''}`} />
                     {displayedMenu && <span className="font-bold truncate">Cerrar sesión</span>}
                 </button>

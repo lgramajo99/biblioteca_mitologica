@@ -23,7 +23,7 @@ function DarkModeSwitchButton() {
                     onClick={handleThemeMode}
                 >
                     <div className={`w-6 h-6 rounded-full bg-white shadow-md flex items-center justify-center transition-transform transform ${themeChangeMode ? 'translate-x-full' : ''}`}>
-                        <img src={themeChangeMode ? sun : moon} alt={themeChangeMode ? "Sun" : "Moon"} className="w-4 h-4" />
+                        <img src={themeChangeMode ? moon : sun} alt={themeChangeMode ? "Sun" : "Moon"} className="w-4 h-4" />
                     </div>
                 </button>
             </div>

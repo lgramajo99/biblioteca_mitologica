@@ -3,6 +3,11 @@ import { adminActions } from "../reducers/adminReducer";
 import { useDispatch } from "react-redux";
 
 
+export const toggleHTMLDarkMode = () => {
+    const htmlElement = document.querySelector('html');
+    htmlElement.classList.toggle('dark');
+};
+
 export const useAdminActions = () => {
     const dispatch = useDispatch();
 
@@ -14,8 +19,12 @@ export const useAdminActions = () => {
         dispatch(adminActions.toggleDisplayedMenu())
     }
 
+
+
+
     const handleThemeMode = () => {
         dispatch(adminActions.toggleThemeMode());
+        toggleHTMLDarkMode();
     }
 
     return {

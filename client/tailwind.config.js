@@ -18,11 +18,14 @@ export default {
         poppins: ['Poppins', 'sans'],
       },
       colors: {
-        deepPurple: '#231E2F', //primario Dark
+        deepPurplePri: '#231E2F', //primario Dark
         darkPurple: '#433e4d', //secundario Dark
         grayishPurple: '#65606e', //acento Dark
 
-        purpleLight: '#87005b', //primario Light
+        darkPrimary: '#121212',
+        darkSecondary: '#3D747F',
+        darkAcenture: '#CEC7BF',
+
       }
     },
   },
