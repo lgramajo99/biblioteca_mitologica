@@ -6,7 +6,7 @@ function Footer() {
         <footer className="bg-gray-800 text-white py-6">
             {/* Sección de redes sociales */}
             <nav className=" container mx-auto gap-y-3 flex flex-wrap justify-around items-center">
-                <ul className='flex justify-around w-full md:w-4/12 order-2 md:order-1'>
+                <ul className='flex justify-center gap-2 md:justify-around md:gap-0 md:w-4/12 order-2 md:order-1'>
                     <SocialLink img={facebook} txt={'https://facebook.com/'} />
                     <SocialLink img={github} txt={'https://github.com/lgramajo99'} />
                     <SocialLink img={instagram} txt={'https://instagram.com/'} />
