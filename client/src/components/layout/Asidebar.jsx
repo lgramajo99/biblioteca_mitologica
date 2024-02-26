@@ -1,6 +1,6 @@
 function Asidebar() {
     return (
-        <aside className="dark:bg-darkAcenture w-full md:w-3/12 lg:w-2/12">
+        <aside className="dark:bg-darkAcenture w-full hidden md:block md:w-3/12 lg:w-2/12">
             <h3>Lista de mitologias</h3>
 
             <ul>

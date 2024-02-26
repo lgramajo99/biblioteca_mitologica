@@ -18,3 +18,9 @@ export { default as trash } from './svg/utilities/trash.svg'
 export { default as circleUser } from './svg/utilities/circle-user.svg';
 export { default as arrowCollapse } from './svg/utilities/arrow-collapse.svg';
 
+export { default as facebook } from './svg/redes/facebook.svg';
+export { default as github } from './svg/redes/github.svg';
+export { default as instagram } from './svg/redes/instagram.svg';
+export { default as linkedin } from './svg/redes/linkedin.svg';
+export { default as twitter } from './svg/redes/twitter.svg';
+export { default as youtube } from './svg/redes/youtube.svg';
