@@ -16,7 +16,7 @@ function Manufactures({ seccion }) {
     const sortedData = useMemo(() => {
         if (seccion === 'Mas recientes') {
             return [...data].sort((a, b) => new Date(b.fecha_creacion) - new Date(a.fecha_creacion));
-        } else if (seccion === 'Mas vistos') {
+        } else if (seccion === 'Mas vistas') {
             return [...data].sort((a, b) => b.contador_vistas - a.contador_vistas);
         } else {
             return data;
@@ -25,22 +25,22 @@ function Manufactures({ seccion }) {
 
 
     return (
-        <section className="mb-10">
-            <h2>Seccion articulos: {seccion}</h2>
+        <section className="dark:text-darkTxt">
+            <h2 className="my-3">Publicaciones {seccion}</h2>
 
             {status === 'loading' && <Loading />}
 
             {status === 'succeeded' && (
-                <article className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                <article className="grid gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     {sortedData.map((cardData) => (
                         <Card key={cardData.id} data={cardData} />
                     ))}
                 </article>
             )}
 
-            {status === 'error' && <p>Error al cargar: {error}</p>}
+            {status === 'error' && <p>Error al cargar contenido: {error}</p>}
 
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button className="my-3 font-bold py-2 px-4 rounded transition duration-300 ease-in-out dark:bg-blue-500 dark:hover:bg-blue-700 ">
                 Ver mas articulos
             </button>
         </section >

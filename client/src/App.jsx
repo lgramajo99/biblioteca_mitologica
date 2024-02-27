@@ -20,7 +20,7 @@ function App() {
   const isAdminRoute = location.pathname.startsWith('/administracion');
 
   return (
-    <div className='dark:bg-darkAcenture'>
+    <div className='bg-gray-100 dark:bg-darkAcenture'>
       {!isAdminRoute && <Navbar />}
 
       <Login />
