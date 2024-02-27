@@ -9,11 +9,11 @@ const Navbar = () => {
     const { handleOpenLoginClick } = useAdminActions();
 
     return (
-        <nav className="bg-gray-800 p-4">
+        <nav className="dark:bg-darkAcenture dark:text-darkTxt py-6">
             <ul className="container mx-auto flex justify-between items-center">
 
                 {/* Brand */}
-                <li className="text-white font-bold text-xl">
+                <li className="font-bold text-xl">
                     B.M
                 </li>
 
@@ -24,16 +24,16 @@ const Navbar = () => {
 
                 {/* Menu */}
                 <li className="hidden md:flex space-x-4">
-                    <NavLink to="/" className="text-white">Inicio</NavLink>
-                    <NavLink to="/biblioteca" className="text-white">Biblioteca</NavLink>
-                    <NavLink to="/nosotros" className="text-white">Nosotros</NavLink>
+                    <NavLink className={'transition duration-300 ease-in-out hover:font-bold dark:hover:text-white'} to="/">Inicio</NavLink>
+                    <NavLink className={'transition duration-300 ease-in-out hover:font-bold dark:hover:text-white'} to="/biblioteca">Biblioteca</NavLink>
+                    <NavLink className={'transition duration-300 ease-in-out hover:font-bold dark:hover:text-white'} to="/nosotros">Nosotros</NavLink>
 
                     {!isAutenticated ?
-                        <NavLink to='#' className='' onClick={handleOpenLoginClick}>
+                        <NavLink to='#' className='transition duration-300 ease-in-out hover:font-bold dark:hover:text-white' onClick={handleOpenLoginClick}>
                             <img src={circleUser} alt="user-circle administracion" className='filter invert' />
                         </NavLink>
                         :
-                        <NavLink to='/administracion' className="text-white">Admin</NavLink>
+                        <NavLink className='transition duration-300 ease-in-out hover:font-bold dark:hover:text-white' to='/administracion'>Admin</NavLink>
                     }
                 </li>
             </ul>

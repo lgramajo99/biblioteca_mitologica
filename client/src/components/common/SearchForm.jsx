@@ -1,20 +1,21 @@
 // SearchForm.js
+import { magnifyGlassLine } from "../../assets/index";
 
 const SearchForm = () => {
     return (
-        <form className="flex items-center">
+        <form className="flex items-center border dark:border-darkSecondary overflow-hidden rounded-full">
             <label htmlFor="buscador" className="sr-only">
                 Buscar:
             </label>
             <input type="text"
-                className="py-1 px-2 border border-gray-500 rounded-l appearance-none"
+                className="py-3 px-3 dark:bg-transparent focus:outline-none border-transparent"
                 id="buscador"
                 name="buscador"
                 placeholder="Buscar..." />
 
             <button type="submit"
-                className="bg-blue-500 text-white py-1 px-2 rounded-r hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
-                Buscar
+                className="p-3">
+                <img src={magnifyGlassLine} className="w-5 h-5 filter invert" alt="Lupa Buscador" />
             </button>
         </form>
     );

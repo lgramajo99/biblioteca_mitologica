@@ -24,3 +24,5 @@ export { default as instagram } from './svg/redes/instagram.svg';
 export { default as linkedin } from './svg/redes/linkedin.svg';
 export { default as twitter } from './svg/redes/twitter.svg';
 export { default as youtube } from './svg/redes/youtube.svg';
+
+export { default as magnifyGlassLine } from './svg/utilities/magnifying-glass-line.svg';
