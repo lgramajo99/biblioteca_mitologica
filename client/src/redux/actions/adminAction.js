@@ -19,9 +19,6 @@ export const useAdminActions = () => {
         dispatch(adminActions.toggleDisplayedMenu())
     }
 
-
-
-
     const handleThemeMode = () => {
         dispatch(adminActions.toggleThemeMode());
         toggleHTMLDarkMode();

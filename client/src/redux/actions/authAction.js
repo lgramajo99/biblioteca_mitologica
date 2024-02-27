@@ -6,7 +6,6 @@ export const useAuthActions = () => {
 
 
     const verifyCredentials = async ({ email, password }) => {
-        // Para simplificar el ejemplo, dejaremos una verificación local
         const verify = {
             email: 'lucianogramajo@gmail.com',
             password: 'asd123',
