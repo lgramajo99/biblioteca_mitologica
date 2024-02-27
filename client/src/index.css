@@ -32,7 +32,10 @@
   }
 }
 
-
+svg {
+  fill: white;
+  /* Cambia el color de relleno del SVG a blanco */
+}
 
 
 .loader {
