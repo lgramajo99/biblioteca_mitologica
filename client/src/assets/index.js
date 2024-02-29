@@ -26,3 +26,9 @@ export { default as twitter } from './svg/redes/twitter.svg';
 export { default as youtube } from './svg/redes/youtube.svg';
 
 export { default as magnifyGlassLine } from './svg/utilities/magnifying-glass-line.svg';
+export { default as expandWindows } from './svg/utilities/expand-window.svg'
+export { default as userCircleLine } from './svg/utilities/user-circle-line.svg'
+
+export { default as homeLine } from './svg/utilities/home-line.svg';
+export { default as infoLine } from './svg/utilities/info-line.svg';
+export { default as searchBookLine } from './svg/utilities/search-book-line.svg';

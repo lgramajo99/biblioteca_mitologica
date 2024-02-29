@@ -32,12 +32,6 @@
   }
 }
 
-svg {
-  fill: white;
-  /* Cambia el color de relleno del SVG a blanco */
-}
-
-
 .loader {
   width: 48px;
   height: 48px;
