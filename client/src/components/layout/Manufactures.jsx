@@ -25,7 +25,7 @@ function Manufactures({ seccion }) {
 
 
     return (
-        <section className="dark:text-darkTxt">
+        <section>
             <h2 className="my-3">Publicaciones {seccion}</h2>
 
             {status === 'loading' && <Loading />}

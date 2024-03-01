@@ -51,4 +51,5 @@ export { default as userIdentifierCardSolid } from './svg/utilities/solid/user-i
 export { default as userMultipleGroupSolid } from './svg/utilities/solid/user-multiple-group-solid.svg';
 export { default as wrenchSolid } from './svg/utilities/solid/wrench-solid.svg';
 
-
+export { default as arrowUpLine } from './svg/utilities/line/arrow-up-line.svg';
+export { default as arrowDownLine } from './svg/utilities/line/arrow-down-line.svg';

@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk, isRejectedWithValue } from "@reduxjs/toolkit";
-import dbMitologias from '../../data/dbMitologias.json';
+import dbMythologies from '../../data/dbMythologies.json';
 
 export const fetchCategories = createAsyncThunk('category/fetchCategories', async () => {
     try {
         await new Promise(resolve => setTimeout(resolve, 3000));
 
-        const data = dbMitologias;
+        const data = dbMythologies;
         return data;
 
     } catch (error) {
@@ -18,12 +18,24 @@ const initialState = {
     data: [],
     status: 'idle',
     error: null,
+    selectedCategories: []
 }
 
 const categorySlice = createSlice({
     name: 'category',
     initialState,
-    reducers: {},
+    reducers: {
+        toggleSelectedCategory: (state, action) => {
+            const { id, name, count_post } = action.payload;
+            const index = state.selectedCategories.findIndex(category => category.id === id);
+
+            if (index === -1) {
+                state.selectedCategories.push({ id, name, count_post });
+            } else {
+                state.selectedCategories = state.selectedCategories.filter(category => category.id !== id);
+            }
+        }
+    },
     extraReducers: (builder) => {
         builder
             .addCase(fetchCategories.pending, (state) => { state.status = 'loading'; })
@@ -40,3 +52,4 @@ const categorySlice = createSlice({
 })
 
 export const { reducer: categoryReducer } = categorySlice;
+export const { toggleSelectedCategory } = categorySlice.actions;

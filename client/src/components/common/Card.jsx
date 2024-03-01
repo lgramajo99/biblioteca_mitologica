@@ -3,7 +3,7 @@ function Card({ data }) {
     const { id, titulo, frase, imagenes } = data;
 
     return (
-        <article className="bg-slate-200 dark:bg-black dark:darkTxt rounded-lg shadow-xl overflow-hidden flex flex-col h-full max-h-[420px]" key={id}>
+        <article className="bg-slate-200 dark:bg-black dark:text-darkTxt rounded-lg shadow-xl overflow-hidden flex flex-col h-full max-h-[420px]" key={id}>
             {imagenes && (<img
                 src={imagenes?.imagen || ''}
                 alt={imagenes?.alt || ''}

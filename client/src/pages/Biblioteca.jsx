@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import PandoraFilter from "../components/common/PandoraFilter";
 import { useEffect } from "react";
-import { fetchArticles } from "../redux/reducers/articleReducer";
+import PandoraFilter from "../components/common/PandoraFilter";
 import Card from "../components/common/Card";
-import Loading from '../components/common/Loading'
+import Loading from '../components/common/Loading';
 import Pagination from "../components/common/Pagination";
+import { fetchArticles } from "../redux/reducers/articleReducer";
 
 function Biblioteca() {
     const { data, status, error } = useSelector(state => state.article);
@@ -14,22 +14,22 @@ function Biblioteca() {
         dispatch(fetchArticles());
     }, [dispatch]);
 
-    // console.log(data)
-
-    return (<section>
-        <h2>Biblioteca completa de Mitologia</h2>
-        <PandoraFilter />
-        {status === 'loading' && <Loading />}
-
-        {/* {status === 'succeeded' &&
-            <article className="bg-slate-100 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
-                {data.map((e) => (<Card key={e.id} data={e} />))}
-            </article>
-        } */}
-
-        {status === 'error' && <p>Error al cargar: {error}</p>}
-        <Pagination />
-    </section>)
+    return (
+        <section className="flex flex-col gap-y-2 p-2">
+            <h2 className="text-center">Biblioteca completa de Mitologia</h2>
+            <PandoraFilter />
+            {status === 'loading' && <Loading />}
+            {status === 'succeeded' && (
+                <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
+                    {data.map((item) => (
+                        <Card key={item.id} data={item} />
+                    ))}
+                </section>
+            )}
+            {status === 'error' && <p>Error al cargar: {error}</p>}
+            <Pagination />
+        </section>
+    );
 }
 
 export default Biblioteca;
