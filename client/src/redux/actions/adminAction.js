@@ -6,7 +6,20 @@ import { useDispatch } from "react-redux";
 export const toggleHTMLDarkMode = () => {
     const htmlElement = document.querySelector('html');
     htmlElement.classList.toggle('dark');
+
+    const isDarkModeEnabled = htmlElement.classList.contains('dark');
+    localStorage.setItem('darkModeEnabled', JSON.stringify(isDarkModeEnabled));
 };
+export const loadDarkModeFromLocalStorage = () => {
+    // Obtener el estado del modo oscuro desde el localStorage
+    const darkModeEnabled = JSON.parse(localStorage.getItem('darkModeEnabled'));
+
+    // Verificar si el modo oscuro está habilitado
+    if (darkModeEnabled) {
+        // Aplicar el modo oscuro al elemento HTML
+        document.querySelector('html').classList.add('dark');
+    }
+}
 
 export const useAdminActions = () => {
     const dispatch = useDispatch();

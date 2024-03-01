@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
     openLogin: true,
     displayedMenu: true,
-    themeChangeMode: true, // true es claro | false es oscuro
+    themeChangeMode: true,
     urlIs: 'undefided',
 };
 

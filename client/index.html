@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="dark">
+<html lang="es" class="">
 
 <head>
   <meta charset="UTF-8" />
@@ -13,11 +13,20 @@
     rel="stylesheet">
 
   <title>Biblioteca Mitologica</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const darkModeEnabled = localStorage.getItem('darkModeEnabled');
+      if (darkModeEnabled === 'true') {
+        document.querySelector('html').classList.add('dark');
+      }
+    });
+  </script>
 </head>
 
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
+
 </body>
 
 </html>

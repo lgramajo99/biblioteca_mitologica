@@ -15,7 +15,7 @@ function Biblioteca() {
     }, [dispatch]);
 
     return (
-        <section className="flex flex-col gap-y-2 p-2">
+        <section className="flex flex-col gap-y-2 p-2 dark:text-darkTxt">
             <h2 className="text-center">Biblioteca completa de Mitologia</h2>
             <PandoraFilter />
             {status === 'loading' && <Loading />}

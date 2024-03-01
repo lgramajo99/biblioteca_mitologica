@@ -5,7 +5,7 @@ import { arrowDownLine, arrowUpLine } from "../../assets";
 
 function PandoraFilter() {
     const [isOpen, setOpen] = useState(false);
-    const { data, selectedCategories } = useSelector(state => state.category);
+    const { data, status, selectedCategories } = useSelector(state => state.category);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -30,13 +30,14 @@ function PandoraFilter() {
                 aria-expanded={isOpen}
                 aria-controls="tiposDropdown"
                 id="tiposButton"
+                disabled={status === "loading" || status === "error"}
             >
                 <span><b>Tipos:</b> Todos</span>
                 <img src={isOpen ? arrowUpLine : arrowDownLine} className="w-5 h-5 filter dark:invert" alt="arrows line" />
             </button>
 
             {isOpen && (
-                <ul className="grid grid-cols-4 gap-1 p-2 rounded-md bg-darkAcenture ">
+                <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 p-2  rounded-md bg-darkAcenture ">
                     {data.map((item) => (
                         <Checkbox
                             key={item.id}
@@ -58,7 +59,7 @@ function Checkbox({ id, name, onChange, isChecked }) {
     };
 
     return (
-        <li>
+        <li className="truncate">
             <a tabIndex="0">
                 <label className="checkbox" htmlFor={id} id={`${id}-label`}>
                     <input type="checkbox"
