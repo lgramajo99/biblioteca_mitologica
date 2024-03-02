@@ -20,19 +20,27 @@ function PandoraFilter() {
         dispatch(toggleSelectedCategory({ id, name, count_post }));
     };
 
+    const viewSelected = () => {
+        const numSelected = selectedCategories.length;
+
+        if (numSelected === 0) { return "Todos"; }
+        else if (numSelected === 1) { return selectedCategories[0].name; }
+        else { return `Seleccionados[${numSelected}]`; }
+    }
+
     return (
         <section className="dark:text-darkTxt">
             <button
                 type="button"
-                className="flex items-center gap-1"
+                className={`flex items-center gap-1 ${status === "loading" || status === "error" ? "cursor-not-allowed" : ""}`}
                 onClick={handleFilterToggle}
                 aria-haspopup="true"
                 aria-expanded={isOpen}
                 aria-controls="tiposDropdown"
                 id="tiposButton"
-                disabled={status === "loading" || status === "error"}
-            >
-                <span><b>Tipos:</b> Todos</span>
+                disabled={status === "loading" || status === "error"}>
+
+                <span><b>Tipos: </b>{viewSelected()}</span>
                 <img src={isOpen ? arrowUpLine : arrowDownLine} className="w-5 h-5 filter dark:invert" alt="arrows line" />
             </button>
 
@@ -77,3 +85,4 @@ function Checkbox({ id, name, onChange, isChecked }) {
 }
 
 export default PandoraFilter;
+//  className={`flex items-center gap-1 ${status === "loading" || status === "error" ? "cursor-not-allowed" : ""}`}
