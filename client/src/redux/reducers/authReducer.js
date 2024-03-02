@@ -1,11 +1,10 @@
+// authReducer.js
 import { createSlice } from '@reduxjs/toolkit';
-
 
 const initialState = {
     isAuthenticated: false,
     user: null
 }
-
 
 const authSlice = createSlice({
     name: 'auth',
@@ -25,6 +24,5 @@ const authSlice = createSlice({
         }
     }
 })
-
 
 export const { actions: authActions, reducer: authReducer } = authSlice;

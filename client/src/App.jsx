@@ -23,7 +23,7 @@ function App() {
     <div className='bg-gray-100 dark:bg-darkAcenture dark:text-darkTxt'>
       {!isAdminRoute && <Navbar />}
 
-      <Login />
+      {/* <Login /> */}
       <Routes>
         <Route index path="/" element={<Home />} />
         <Route path="/directory" element={<Directory />} />

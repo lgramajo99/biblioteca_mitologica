@@ -4,11 +4,13 @@ import { useAdminActions } from '../../redux/actions/adminAction';
 import { NavLink } from 'react-router-dom';
 import { userCircleLine } from '../../assets/index';
 import { useState } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Navbar = () => {
     const { isAuthenticated } = useSelector(state => state.auth);
     const { handleOpenLoginClick } = useAdminActions();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { loginWithRedirect } = useAuth0();
 
     return (
         <nav className='dark:bg-darkAcenture dark:text-darkTxt py-6'>
@@ -36,6 +38,7 @@ const Navbar = () => {
                             </NavLink> :
                             <NavLink className='transition duration-300 ease-in-out hover:font-bold dark:hover:text-white' to='/administracion'>Admin</NavLink>
                         }
+                        <button type='button' onClick={() => { loginWithRedirect() }}>login</button>
                     </ul>
                 </article>
             </section>

@@ -7,7 +7,7 @@ import { useAuthActions } from "../../redux/actions/authAction";
 function Login() {
     const isOpenLogin = useSelector(state => state.admin.openLogin)
     const { handleOpenLoginClick } = useAdminActions();
-    const { login } = useAuthActions();
+    const { handleLogin } = useAuthActions();
 
     const [formData, setFormData] = useState({
         email: '',
@@ -28,7 +28,7 @@ function Login() {
     const handleSubmit = async (event) => {
         // agregar un snackbar para mostrar el mensaje de inicio de seccion ok o incorrecto
         event.preventDefault();
-        const user = await login({
+        const user = await handleLogin({
             email: formData.email,
             password: formData.password,
         });
