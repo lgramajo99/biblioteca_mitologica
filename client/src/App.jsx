@@ -28,7 +28,7 @@ function App() {
         <Route index path="/" element={<Home />} />
         <Route path="/directory" element={<Directory />} />
         <Route path="/article" element={<ArticlePost />} />
-        <Route path="/articulo-prueba" element={<ArticleContainer />} />
+        <Route path="/articulo/:id" element={<ArticleContainer />} />
         <Route path="/biblioteca" element={<Biblioteca />} />
 
         <Route path="/administracion" element={<Dashboard />} >
