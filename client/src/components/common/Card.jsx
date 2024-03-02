@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 function Card({ data }) {
     if (!data) return null;
     const { id, titulo, frase, imagenes } = data;
@@ -15,12 +17,12 @@ function Card({ data }) {
                 <p className=" text-start mt-2 line-clamp-3">{frase}</p>
             </header>
             <footer className="text-right mt-auto py-1 px-2">
-                <a className="text-blue-500 font-bold underline transition-colors duration-300 hover:text-darkSecondary mb-auto"
-                    href="/articulo-prueba"
+                <NavLink className="text-blue-500 font-bold underline transition-colors duration-300 hover:text-darkSecondary mb-auto"
+                    to={`/articulo/${id}`}
                     rel="noopener noreferrer"
                     target="_blank">
                     Leer más <span>&rarr;</span>
-                </a>
+                </NavLink>
             </footer>
         </article>
     );
