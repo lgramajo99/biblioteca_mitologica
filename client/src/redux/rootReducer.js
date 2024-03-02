@@ -5,6 +5,7 @@ import { articleReducer } from './reducers/articleReducer';
 import { categoryReducer } from './reducers/categoryReducer';
 import counterReducer from './reducers/counterReducer';
 import { authReducer } from './reducers/authReducer';
+import articleIdReducer from './reducers/articleIdReducer';
 
 const rootReducer = combineReducers({
     admin: adminReducer,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
     auth: authReducer,
     counter: counterReducer,
     category: categoryReducer,
+    articleId: articleIdReducer,
 });
 
 export default rootReducer;

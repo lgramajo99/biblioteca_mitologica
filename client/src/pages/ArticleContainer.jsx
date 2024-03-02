@@ -1,23 +1,32 @@
-function ArticleContainer() {
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { fetchArticleById } from "../redux/reducers/articleIdReducer";
+import Loading from "../components/common/Loading";
 
-    const imagenPrueba = {
-        imagen: 'https://ih0.redbubble.net/image.1756098780.0530/raf,360x360,075,t,fafafa:ca443f4786.jpg',
-        alt: 'Imagen rota'
-    }
+function ArticleContainer() {
+    const { artId } = useParams();
+    const dispatch = useDispatch();
+    const { article, status, error } = useSelector(state => state.articleId);
+
+
+    useEffect(() => {
+        dispatch(fetchArticleById(artId));
+    }, [dispatch, artId]);
 
     return (
-        <article className=" bg-slate-100 container m-auto py-10">
-            <h2 className="text-center mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
-            <h3 className="text-center mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde possimus dolores consectetur ad aspernatur exercitationem.</h3>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut est vero error officia! Quo a, quis error dolorem exercitationem aliquam est saepe quisquam veritatis praesentium vero quibusdam, sint aspernatur esse temporibus molestiae, consequuntur sapiente rem perferendis obcaecati sit architecto. Atque ipsum at deserunt! Eaque porro, perferendis exercitationem eius vel mollitia?</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis, ab? Architecto molestiae iure itaque suscipit expedita officiis, quas facilis eum laudantium quod? Minus, maiores temporibus odio atque quam, enim quis ipsa incidunt doloribus neque unde veniam, repudiandae officia corrupti esse est tenetur pariatur? Ad, provident.</p>
-
-            <img src={imagenPrueba.imagen} alt={imagenPrueba.alt} />
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et commodi accusamus minus natus est ut, excepturi ducimus totam sed corrupti culpa, voluptates facere tempora optio!</p>
-        </article>
-    )
+        <section className="w-full h-screen p-3">
+            {status === 'loading' && <Loading />}
+            {status === 'succeeded' && (
+                <article className="flex flex-col">
+                    <span className="text-end">{article.fecha_creacion}</span>
+                    <h2 className="text-center mb-4">{article.titulo}</h2>
+                    <p>{article.frase}</p>
+                    <img src={article.imagenes.imagen} alt={article.imagenes.alt} className="relative w-44" />
+                </article>
+            )}
+        </section >
+    );
 }
 
 export default ArticleContainer;
