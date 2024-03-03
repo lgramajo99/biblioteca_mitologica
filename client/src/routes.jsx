@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import ArticleContainer from './pages/ArticleContainer';
 import Biblioteca from './pages/Biblioteca';
 import Calendar from './components/dashboard/pages/Calendar';
@@ -10,62 +11,59 @@ import Home from './pages/Home';
 import ListCategories from './components/dashboard/pages/ListCategories';
 import ListPost from './components/dashboard/pages/ListPost';
 import PostEditor from './components/dashboard/pages/PostEditor';
-import { useEffect } from 'react';
-
 
 const RoutesIndex = () => {
     const location = useLocation();
     const isAdminRoute = location.pathname.startsWith('/administracion');
 
     useEffect(() => {
-        updateDocumentTitle
+        updateDocumentTitle()
     }, [location])
 
     const updateDocumentTitle = () => {
         let title = "Biblioteca mitológica";
+        const path = location.pathname;
 
-        switch (location.pathname) {
-            case '/administracion':
+        switch (true) {
+            case path.startsWith('/administracion'):
                 title = `Panel de administración | ${title}`;
                 break;
-            case '/biblioteca':
+            case path.startsWith('/biblioteca'):
                 title = `Biblioteca | ${title}`;
                 break;
-            case '/articulo':
+            case path.startsWith('/articulo'):
                 title = `Artículo | ${title}`;
                 break;
-            default:
+            case path === '/':
                 title = `Inicio | ${title}`;
                 break;
+            default:
+                title = `No encontrado | ${title}`;
+                break;
         }
-
         document.title = title;
     }
 
     return (<>
         {!isAdminRoute && <Navbar />}
+
         <Routes>
             <Route index path="/" element={<Home />} />
             <Route path="/articulo/:artId" element={<ArticleContainer />} />
-            <Route path="/biblioteca" element={<Biblioteca />} />
-            <Route path="/administracion" element={<DashboardRoutes />} />
+            <Route exact path="/biblioteca" element={<Biblioteca />} />
+            <Route exact path="/administracion" element={<Dashboard />} >
+                <Route path="crear-publicacion" element={<PostEditor />} />
+                <Route path="lista-categorias" element={<ListCategories />} />
+                <Route path="lista-publicaciones" element={<ListPost />} />
+                <Route path="calendario" element={<Calendar />} />
+                <Route path="*" element={<ErrorPage />} />
+            </Route>
             <Route path="*" element={<ErrorPage />} />
         </Routes>
+
         {!isAdminRoute && <Footer />}
 
     </>)
 }
 
 export default RoutesIndex;
-
-const DashboardRoutes = () => {
-    return (<>
-        <Dashboard>
-            <Route path="crear-publicacion" element={<PostEditor />} />
-            <Route path="lista-categorias" element={<ListCategories />} />
-            <Route path="lista-publicaciones" element={<ListPost />} />
-            <Route path="calendario" element={<Calendar />} />
-            <Route path="*" element={<ErrorPage />} />
-        </Dashboard>
-    </>)
-}
