@@ -1,22 +1,22 @@
-export { default as addFile } from './svg/utilities/line/add-file.svg'
-export { default as listUl } from './svg/utilities/line/list-ul.svg';
-export { default as users } from './svg/utilities/line/users.svg';
-export { default as chartPie } from './svg/utilities/line/chart-pie.svg';
-export { default as squarePoll } from './svg/utilities/line/square-poll.svg';
-export { default as calendar } from './svg/utilities/line/calendar.svg';
+export { default as addFile } from './svg/utilities/repo/add-file.svg'
+export { default as listUl } from './svg/utilities/repo/list-ul.svg';
+export { default as users } from './svg/utilities/repo/users.svg';
+export { default as chartPie } from './svg/utilities/repo/chart-pie.svg';
+export { default as squarePoll } from './svg/utilities/repo/square-poll.svg';
+export { default as calendar } from './svg/utilities/repo/calendar.svg';
 
-export { default as doorOpen } from './svg/utilities/line/door-open.svg';
-export { default as menu } from './svg/utilities/line/menu.svg';
-export { default as sun } from './svg/utilities/line/sun.svg';
-export { default as moon } from './svg/utilities/line/moon.svg';
+export { default as doorOpen } from './svg/utilities/repo/door-open.svg';
+export { default as menu } from './svg/utilities/repo/menu.svg';
+export { default as sun } from './svg/utilities/repo/sun.svg';
+export { default as moon } from './svg/utilities/repo/moon.svg';
 
-export { default as pen } from './svg/utilities/line/pen.svg'
-export { default as arrowSquare } from './svg/utilities/line/arrow-square.svg'
-export { default as penSquare } from './svg/utilities/line/pen-square.svg'
-export { default as trash } from './svg/utilities/line/trash.svg'
+export { default as pen } from './svg/utilities/repo/pen.svg'
+export { default as arrowSquare } from './svg/utilities/repo/arrow-square.svg'
+export { default as penSquare } from './svg/utilities/repo/pen-square.svg'
+export { default as trash } from './svg/utilities/repo/trash.svg'
 
-export { default as circleUser } from './svg/utilities/line/circle-user.svg';
-export { default as arrowCollapse } from './svg/utilities/line/arrow-collapse.svg';
+export { default as circleUser } from './svg/utilities/repo/circle-user.svg';
+export { default as arrowCollapse } from './svg/utilities/repo/arrow-collapse.svg';
 
 export { default as facebook } from './svg/redes/facebook.svg';
 export { default as github } from './svg/redes/github.svg';
@@ -25,13 +25,13 @@ export { default as linkedin } from './svg/redes/linkedin.svg';
 export { default as twitter } from './svg/redes/twitter.svg';
 export { default as youtube } from './svg/redes/youtube.svg';
 
-export { default as magnifyGlassLine } from './svg/utilities/line/magnifying-glass-line.svg';
-export { default as expandWindows } from './svg/utilities/line/expand-window.svg'
-export { default as userCircleLine } from './svg/utilities/line/user-circle-line.svg'
+export { default as magnifyGlassLine } from './svg/utilities/repo/magnifying-glass-line.svg';
+export { default as expandWindows } from './svg/utilities/repo/expand-window.svg'
+export { default as userCircleLine } from './svg/utilities/repo/user-circle-line.svg'
 
-export { default as homeLine } from './svg/utilities/line/home-line.svg';
-export { default as infoLine } from './svg/utilities/line/info-line.svg';
-export { default as searchBookLine } from './svg/utilities/line/search-book-line.svg';
+export { default as homeLine } from './svg/utilities/repo/home-line.svg';
+export { default as infoLine } from './svg/utilities/repo/info-line.svg';
+export { default as searchBookLine } from './svg/utilities/repo/search-book-line.svg';
 
 export { default as addSquareSolid } from './svg/utilities/solid/add-square-solid.svg';
 export { default as blankCalendarSolid } from './svg/utilities/solid/blank-calendar-solid.svg';
@@ -51,5 +51,5 @@ export { default as userIdentifierCardSolid } from './svg/utilities/solid/user-i
 export { default as userMultipleGroupSolid } from './svg/utilities/solid/user-multiple-group-solid.svg';
 export { default as wrenchSolid } from './svg/utilities/solid/wrench-solid.svg';
 
-export { default as arrowUpLine } from './svg/utilities/line/arrow-up-line.svg';
-export { default as arrowDownLine } from './svg/utilities/line/arrow-down-line.svg';
+export { default as arrowUpLine } from './svg/utilities/repo/arrow-up-line.svg';
+export { default as arrowDownLine } from './svg/utilities/repo/arrow-down-line.svg';
