@@ -11,7 +11,6 @@ function Asidebar() {
         dispatch(fetchCategories());
     }, [dispatch])
 
-    console.log(data)
     return (
         <aside className="w-full hidden md:block md:w-3/12 lg:w-2/12 px-1 dark:bg-darkAcenture ">
             <h3>Lista de mitologias</h3>

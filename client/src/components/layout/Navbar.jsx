@@ -14,18 +14,17 @@ const Navbar = () => {
 
     return (
         <nav className='dark:bg-darkAcenture dark:text-darkTxt py-6'>
-            <section className='container mx-auto flex items-start sm:items-center px-4 sm:px-0'>
-
-                <article className='flex items-center justify-between w-9/12 sm:w-7/12 pr-2'>
+            <section className='md:container mx-auto flex items-start md:items-center px-2 sm:px-0'>
+                <article className='flex items-center justify-between w-9/12 md:w-7/12 pr-2'>
                     <span className='font-bold text-xl'>B.M</span>
                     <SearchForm />
                 </article>
 
                 <article className='w-3/12 sm:w-5/12 text-end'>
-                    <button type='button' onClick={toggleMenu} className='sm:hidden font-extrabold text-2xl'>
+                    <button type='button' onClick={toggleMenu} className='md:hidden font-extrabold text-2xl'>
                         {!isMenuOpen ? '☰' : '✖'}
                     </button>
-                    <ul className={`sm:flex ${isMenuOpen ? 'flex' : 'hidden'} flex-col sm:flex-row gap-x-4 gap-y-2 justify-end`}>
+                    <ul className={`sm:flex ${isMenuOpen ? 'flex' : 'hidden'} flex-col md:flex-row gap-x-4 gap-y-2 justify-end`}>
                         <LinkItem text={'Inicio'} to={'/'} />
                         <LinkItem text={'Biblioteca'} to={'/biblioteca'} />
                         <LinkItem text={'Nosotros'} to={'/nosotros'} />

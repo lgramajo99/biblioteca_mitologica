@@ -11,10 +11,12 @@ import Home from './pages/Home';
 import ListCategories from './components/dashboard/pages/ListCategories';
 import ListPost from './components/dashboard/pages/ListPost';
 import PostEditor from './components/dashboard/pages/PostEditor';
+import { useAuthActions } from './redux/actions/authAction';
 
 const RoutesIndex = () => {
     const location = useLocation();
     const isAdminRoute = location.pathname.startsWith('/administracion');
+    const { isAdmin } = useAuthActions();
 
     useEffect(() => {
         updateDocumentTitle()
@@ -51,13 +53,14 @@ const RoutesIndex = () => {
             <Route index path="/" element={<Home />} />
             <Route path="/articulo/:artId" element={<ArticleContainer />} />
             <Route exact path="/biblioteca" element={<Biblioteca />} />
-            <Route exact path="/administracion" element={<Dashboard />} >
+            {isAdmin() && <Route exact path="/administracion" element={<Dashboard />} >
                 <Route path="crear-publicacion" element={<PostEditor />} />
                 <Route path="lista-categorias" element={<ListCategories />} />
                 <Route path="lista-publicaciones" element={<ListPost />} />
                 <Route path="calendario" element={<Calendar />} />
                 <Route path="*" element={<ErrorPage />} />
-            </Route>
+            </Route>}
+
             <Route path="*" element={<ErrorPage />} />
         </Routes>
 

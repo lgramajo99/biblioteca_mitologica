@@ -1,7 +1,7 @@
 // authAction.js
-import { authActions } from "../reducers/authReducer"; // Asegúrate de que el camino sea correcto.
+import { authActions } from "../reducers/authReducer";
 import { useDispatch } from "react-redux";
-import { useAuth0 } from '@auth0/auth0-react';
+import { useAuth0, } from '@auth0/auth0-react';
 
 export const useAuthActions = () => {
     const dispatch = useDispatch();
@@ -12,36 +12,23 @@ export const useAuthActions = () => {
     const handleLogout = () => {
         logout({ returnTo: window.location.origin });
         dispatch(authActions.logOut());
-        console.info("Deslogeados");
+        console.info("Deslogeado");
     };
 
+    const isAdmin = () => {
+        const sub = "auth0|65e3aafb4e77a98cce0a138b"
+        return (sub === user?.sub);
+    }
+
     if (!isAuthenticated && !isLoading) { dispatch(authActions.loginFailure()); }
-    else if (isAuthenticated) { dispatch(authActions.loginSuccess(user)); }
+    else if (isAuthenticated) {
+        dispatch(authActions.loginSuccess(user));
+        console.log(user)
+    }
 
     return {
         handleLogin,
         handleLogout,
+        isAdmin,
     };
 };
-
-
-//    const verifyCredentials = async ({ email, password }) => { const verify = { email: 'lucianogramajo@gmail.com', password: 'asd123', isAdmin: true, user: 'Luciano' }; return verify.email === email && verify.password === password ? verify : null;};
-
-// const handleLogin = async ({ email, password }) => {
-//     try {
-//         const user = await verifyCredentials({ email, password });
-//         if (user) {
-//             dispatch(authActions.loginSuccess({ email: user.email, user: user.user }));
-//             console.info("Autenticación exitosa");
-//             return { email: user.email, user: user.user };
-//         } else {
-//             dispatch(authActions.loginFailure());
-//             console.error("Credenciales incorrectas");
-//             return null;
-//         }
-//     } catch (error) {
-//         console.error("Error de autenticación:", error);
-//         dispatch(authActions.loginFailure());
-//         return null;
-//     }
-// };

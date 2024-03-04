@@ -1,22 +1,21 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { useSelector } from "react-redux";
-import { useAdminActions } from '../../../redux/actions/adminAction';
-import ElementBtnMenu from "./ElementBtnMenu";
-import { addSquareSolid, blankCalendarSolid, bulletListSolid, expandHorizontalSolid, graphSolid, logoutSolid, userIdentifierCardSolid, userMultipleGroupSolid, wrenchSolid } from "../../../assets/index";
-import { useAuthActions } from "../../../redux/actions/authAction";
 import { useNavigate } from "react-router-dom";
+import { addSquareSolid, blankCalendarSolid, bulletListSolid, expandHorizontalSolid, graphSolid, logoutSolid, userIdentifierCardSolid, userMultipleGroupSolid, wrenchSolid } from "../../../assets/index";
+import ElementBtnMenu from "./ElementBtnMenu";
 import DarkModeSwitchButton from '../../common/DarkModeSwitchButton';
+import { useAdminActions } from '../../../redux/actions/adminAction';
+import { useAuthActions } from "../../../redux/actions/authAction";
 
 function DashboardMenu() {
+    const navigate = useNavigate()
     const { handleDisplayedMenu } = useAdminActions();
     const { handleLogout } = useAuthActions();
     const { displayedMenu } = useSelector(state => state.admin);
-    const navigate = useNavigate()
-    const { user, isAuthenticated } = useAuth0();
+    const { user } = useAuth0();
 
     return (
         <nav className={`fixed top-0 left-0 h-full p-2 bg-purple-700 dark:text-slate-300 dark:bg-darkPrimary shadow-md transition-all duration-500 ${displayedMenu ? "w-80" : "w-20"} overflow-y-auto`} >
-
             <button type="button"
                 className="mx-1 p-1 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500 transform transition-transform hover:scale-95 active:scale-90"
                 onClick={handleDisplayedMenu}>
@@ -24,15 +23,13 @@ function DashboardMenu() {
             </button>
 
             <ul className="overflow-hidden gap-y-2 flex flex-col">
-                <button
-                    type="button"
+                <button type="button"
                     className="w-full px-2 py-1 font-semibold transition-colors duration-300 ease-in-out rounded-md focus:outline-none focus:text-white hover:text-white overflow-hidden whitespace-nowrap"
-                    onClick={() => navigate(`/`)}
-                >
+                    onClick={() => navigate(`/`)}>
                     {displayedMenu ? "Biblioteca Mitologica" : "B|M"}
                 </button>
 
-                <ElementBtnMenu image={userIdentifierCardSolid} alt="usuario" txt="Luciano G." to={"mi-perfil"} />
+                <ElementBtnMenu image={userIdentifierCardSolid} alt="usuario" txt={user?.name || 'Undefined'} to={"mi-perfil"} />
 
                 <ElementBtnMenu image={addSquareSolid} alt="Crear publicacion" txt="Crear Publicacion" to={"crear-publicacion"} />
                 <ElementBtnMenu image={bulletListSolid} alt="listUl" txt="Lista de publicaciones" to={"lista-publicaciones"} />
