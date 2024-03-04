@@ -21,11 +21,12 @@ export default {
         deepPurplePri: '#231E2F', //primario Dark
         darkPurple: '#433e4d', //secundario Dark
         grayishPurple: '#65606e', //acento Dark
-        
-        lightPrimary: '#59acc4',
-        lightSecondary: '#3D747F',
+
+        lightPrimary: '#59acc4', //bg footer, navbar, sidebar
         lightAcenture: '#c5d5d9', //bg fondo
-        
+        lightComplement: '#E2E8F0', //bg complemento de acenture
+
+        secondary: '#3D747F', 
 
         darkPrimary: '#121212',
         darkSecondary: '#3D747F',

@@ -6,7 +6,7 @@ function ElementListPosts({ data }) {
 
 
     return (
-        <section key={id} className="flex w-12/12 h-20 min-h-20 justify-between px-3 items-center rounded-lg shadow-md border border-darkSecondary dark:bg-darkPrimary shadow-darkSecondary">
+        <section key={id} className="flex w-12/12 h-20 min-h-20 justify-between items-center rounded-lg shadow-sm border bg-lightComplement border-secondary dark:bg-darkPrimary shadow-secondary">
             <article className="relative w-2/12 h-full overflow-hidden">
                 <img src={imagenes?.imagen} alt={imagenes?.alt}
                     className="object-cover object-center w-full h-full rounded" />

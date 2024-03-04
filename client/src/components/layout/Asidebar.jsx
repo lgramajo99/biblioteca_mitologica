@@ -12,7 +12,7 @@ function Asidebar() {
     }, [dispatch])
 
     return (
-        <aside className="w-full hidden md:block md:w-3/12 lg:w-2/12 px-1 dark:bg-darkAcenture ">
+        <aside className="w-full hidden md:block md:w-3/12 lg:w-2/12 px-1 bg-lightPrimary dark:bg-darkPrimary">
             <h3>Lista de mitologias</h3>
             <ul className="text-start">
                 {data.map((item) => (

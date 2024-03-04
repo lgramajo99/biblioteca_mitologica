@@ -29,7 +29,7 @@ function PandoraFilter() {
     }
 
     return (
-        <section className="dark:text-darkTxt">
+        <section className="dark:text-darkTxt ">
             <button
                 type="button"
                 className={`flex items-center gap-1 ${status === "loading" || status === "error" ? "cursor-not-allowed" : ""}`}
@@ -45,7 +45,7 @@ function PandoraFilter() {
             </button>
 
             {isOpen && (
-                <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 p-2  rounded-md bg-darkAcenture ">
+                <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 p-2 rounded-md bg-lightComplement dark:bg-darkPrimary">
                     {data.map((item) => (
                         <Checkbox
                             key={item.id}

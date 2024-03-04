@@ -13,7 +13,7 @@ const SearchForm = () => {
 
     return (
         <form onSubmit={handleSubmit}
-            className={`flex items-center border dark:border-darkSecondary overflow-hidden rounded-full ${searchTerm ? 'w-auto' : 'w-28 md:w-auto'}`}>
+            className={`flex items-center border border-secondary overflow-hidden rounded-full ${searchTerm ? 'w-auto' : 'w-28 md:w-auto'}`}>
             <label htmlFor="buscador" className="sr-only">Buscar:</label>
             <input type="text"
                 className="p-2 sm:px-3 dark:bg-transparent focus:outline-none border-transparent"

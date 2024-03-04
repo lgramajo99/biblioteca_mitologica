@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 function Footer() {
     return (
-        <footer className="dark:bg-darkAcenture dark:text-darkTxt py-6">
+        <footer className="bg-lightPrimary dark:bg-darkPrimary dark:text-darkTxt py-6">
             {/* Sección de redes sociales */}
             <nav className=" container mx-auto gap-y-3 flex flex-wrap justify-around items-center">
                 <ul className='flex justify-center gap-2 md:justify-around md:gap-0 md:w-4/12 order-2 md:order-1'>
@@ -30,9 +30,7 @@ function Footer() {
                 </div>
                 {/* Sección de derechos de autor */}
                 <section className="w-full order-3">
-                    <p className="text-sm ">
-                        &copy; 11/2023 | Todos los derechos reservados. Desarrollado por <span className="font-semibold">Luciano Gramajo</span>.
-                    </p>
+                    <p className="text-sm ">&copy; 11/2023 | Todos los derechos reservados. Desarrollado por <span className="font-semibold">Luciano Gramajo</span>.</p>
                 </section>
             </nav>
         </footer>
@@ -42,7 +40,10 @@ function Footer() {
 export default Footer;
 
 function SocialLink({ img, txt }) {
-    return (<a className='rounded-full p-2 transition duration-300 ease-in-out bg-white hover:bg-darkSecondary' href={txt} target="_blank" rel="noopener noreferrer">
+    return (<a className='rounded-full p-2 transition duration-300 ease-in-out bg-white hover:bg-secondary'
+        href={txt}
+        target="_blank"
+        rel="noopener noreferrer">
         <img src={img} className='w-4 h-4' alt={txt} />
     </a>)
 }

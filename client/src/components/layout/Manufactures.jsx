@@ -40,7 +40,7 @@ function Manufactures({ seccion }) {
 
             {status === 'error' && <p>Error al cargar contenido: {error}</p>}
 
-            <button className="my-3 font-bold py-2 px-4 rounded transition duration-300 ease-in-out dark:bg-blue-500 dark:hover:bg-blue-700 ">
+            <button className="my-3 font-bold py-2 px-4 rounded transition duration-300 ease-in-out border-2 border-secondary hover:bg-secondary">
                 Ver mas articulos
             </button>
         </section >
