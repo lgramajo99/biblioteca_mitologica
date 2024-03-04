@@ -1,46 +1,43 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-
+import { default as image404 } from "../assets/image/404_page_cover.png";
 
 function ErrorPage() {
-    const imagenCadenaRota = "https://static.xx.fbcdn.net/rsrc.php/y7/r/s_LXY1yMsCT.svg?_nc_eui2=AeEKSyXqwn2KWPBbgao-Nh62EvoiLXyhshMS-iItfKGyE_3Udp2blOEjj03XE5iWmzmOokSUPwOTQyzBJWqeiZOg.png";
     const navigate = useNavigate();
     const handleGoBack = () => { navigate(-1) }
 
     return (
-        <main className="flex flex-col items-center justify-center h-screen gap-y-2">
-            <img src={imagenCadenaRota}
-                alt="imagen de una cadena rota, referencia a que el enlace esta roto."
-                className="max-w-xs" />
+        <main className="flex flex-col py-3 justify-center items-center">
+            <img src={image404}
+                alt='imagen de pinguino pescando "not found", referencia a que el enlace esta roto o no existe.'
+                className="w-6/12" />
+            <h2>Página no encontrada</h2>
+            <p>Lo sentimos, esta página no está disponible</p>
+            <br />
+            <ul className="flex flex-col gap-1 text-center">
+                <NavLink
+                    className={'block border-2 border-darkSecondary rounded-lg p-2 font-bold transition duration-300 ease-in-out hover:bg-darkSecondary'}
+                    to={'/'}
+                    aria-label="Volver al inicio"
+                    title="Volver al inicio">
+                    Volver al inicio
+                </NavLink>
 
-            <h2 className="text-3xl font-bold">Esta página no está disponible</h2>
+                <button type="button"
+                    onClick={handleGoBack}
+                    className={'block border-2 border-darkSecondary rounded-lg p-2 font-bold transition duration-300 ease-in-out hover:bg-darkSecondary'}
+                    aria-label="Volver atrás"
+                    title="Volver atrás">
+                    Volver atrás
+                </button>
 
-            <p className="text-gray-600">
-                Es posible que el enlace esté roto o que se haya eliminado la página. Comprueba que el enlace que quieres abrir es correcto.
-            </p>
-
-            <ul className="flex flex-col text-center gap-y-2">
-                <li>
-                    <NavLink
-                        className={'bg-blue-500 text-gray-950 py-1 px-3 rounded font-bold transition duration-300 ease-in-out hover:bg-blue-600'}
-                        to={'/'}
-                        aria-label="Volver al inicio"
-                        title="Volver al inicio">Volver al inicio</NavLink>
-                </li>
-                <li>
-                    <button type="button"
-                        onClick={handleGoBack}
-                        className={'bg-gray-300 text-gray-700 py-1 px-3 rounded font-bold transition duration-300 ease-in-out hover:bg-gray-400 hover:text-gray-800'}
-                        aria-label="Volver atrás"
-                        title="Volver atrás">Volver atrás</button>
-                </li>
-                <li>
-                    <NavLink
-                        className={'bg-gray-300 text-gray-700 py-1 px-3 rounded font-bold transition duration-300 ease-in-out hover:bg-gray-400 hover:text-gray-800'}
-                        to={'/ayuda'}
-                        aria-label="Ir a servicios de ayuda"
-                        title="Ir a servicios de ayuda">Ir a servicios de ayuda</NavLink>
-                </li>
+                <NavLink
+                    className={'block border-2 border-darkSecondary rounded-lg p-2 font-bold transition duration-300 ease-in-out hover:bg-darkSecondary'}
+                    to={'/ayuda'}
+                    aria-label="Ir a servicios de ayuda"
+                    title="Ir a servicios de ayuda">
+                    Ir a servicios de ayuda
+                </NavLink>
             </ul>
         </main>
     );

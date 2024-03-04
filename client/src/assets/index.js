@@ -50,6 +50,7 @@ export { default as triangleFlagSolid } from './svg/utilities/solid/triangle-fla
 export { default as userIdentifierCardSolid } from './svg/utilities/solid/user-identifier-card-solid.svg';
 export { default as userMultipleGroupSolid } from './svg/utilities/solid/user-multiple-group-solid.svg';
 export { default as wrenchSolid } from './svg/utilities/solid/wrench-solid.svg';
+export { default as brokenLinkSolid } from './svg/utilities/solid/broken-link-solid.svg'
 
 export { default as arrowUpLine } from './svg/utilities/repo/arrow-up-line.svg';
 export { default as arrowDownLine } from './svg/utilities/repo/arrow-down-line.svg';
