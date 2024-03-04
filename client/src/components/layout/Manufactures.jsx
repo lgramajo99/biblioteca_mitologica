@@ -3,11 +3,13 @@ import Card from "../common/Card";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchArticles } from "../../redux/reducers/articleReducer";
 import Loading from "../common/Loading";
-
+import { useNavigate } from "react-router-dom";
 
 function Manufactures({ seccion }) {
     const { data, status, error } = useSelector(state => state.article);
+    const navigate = useNavigate()
     const dispatch = useDispatch();
+    const toLibrary = () => { navigate('/biblioteca') }
 
     useEffect(() => {
         dispatch(fetchArticles());
@@ -39,8 +41,7 @@ function Manufactures({ seccion }) {
             )}
 
             {status === 'error' && <p>Error al cargar contenido: {error}</p>}
-
-            <button className="my-3 font-bold py-2 px-4 rounded transition duration-300 ease-in-out border-2 border-secondary hover:bg-secondary">
+            <button onClick={toLibrary} className="my-3 font-bold py-2 px-4 rounded transition duration-300 ease-in-out border-2 border-secondary hover:bg-secondary">
                 Ver mas articulos
             </button>
         </section >

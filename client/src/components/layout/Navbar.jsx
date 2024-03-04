@@ -30,7 +30,7 @@ const Navbar = () => {
                         <LinkItem text={'Nosotros'} to={'/nosotros'} />
 
                         {isLoading ? (<span>Cargando...</span>) : isAuthenticated ? (
-                            <>{isAdmin() && <NavLink to='/administracion' className='transition duration-300 ease-in-out hover:font-bold dark:hover:text-white'>
+                            <>{isAdmin() && <NavLink to='/administracion/welcome' className='transition duration-300 ease-in-out hover:font-bold dark:hover:text-white'>
                                 Admin
                             </NavLink>}
                                 <button type='button' className='transition duration-300 ease-in-out hover:font-bold dark:hover:text-white' onClick={handleLogout}>

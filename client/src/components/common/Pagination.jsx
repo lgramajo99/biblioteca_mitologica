@@ -8,11 +8,11 @@ function Pagination() {
     const renderPages = () => {
         const pages = [];
         const pageNeighbours = 1;
-        const styleBtn = `w-12 py-1 border border-darkSecondary rounded-md transition duration-300 ease-in-out text-darkTxt`
+        const styleBtn = `w-12 py-1 border border-secondary rounded-md transition duration-300 ease-in-out text-darkTxt`
 
         pages.push(
             <button key={'<<'}
-                className={`${styleBtn} ${currentPage === 1 ? 'pointer-events-none bg-darkAcenture' : ' hover:bg-darkSecondary focus:bg-darkSecondary'}`}
+                className={`${styleBtn} ${currentPage === 1 ? 'pointer-events-none bg-darkAcenture' : ' hover:bg-secondary focus:bg-secondary'}`}
                 type="button"
                 disabled={currentPage === 1}
                 onClick={() => handleChangePage(currentPage - 1)}>
@@ -21,7 +21,7 @@ function Pagination() {
         )
 
         pages.push(
-            <button className={`${styleBtn} ${currentPage === 1 ? 'pointer-events-none bg-darkAcenture' : ' hover:bg-darkSecondary focus:bg-darkSecondary'}`}
+            <button className={`${styleBtn} ${currentPage === 1 ? 'pointer-events-none bg-darkAcenture' : ' hover:bg-secondary focus:bg-secondary'}`}
                 key="1"
                 onClick={() => handleChangePage(1)}
                 disabled={currentPage === 1}>
@@ -31,7 +31,7 @@ function Pagination() {
 
         for (let page = Math.max(2, currentPage - pageNeighbours); page <= Math.min(totalPages - 1, currentPage + pageNeighbours); page++) {
             pages.push(
-                <button className={`${styleBtn} ${currentPage === page ? 'pointer-events-none bg-darkAcenture' : 'hover:bg-darkSecondary focus:bg-darkSecondary'}`}
+                <button className={`${styleBtn} ${currentPage === page ? 'pointer-events-none bg-darkAcenture' : 'hover:bg-secondary focus:bg-secondary'}`}
                     key={page}
                     disabled={currentPage === page}
                     onClick={() => handleChangePage(page)}>
@@ -41,7 +41,7 @@ function Pagination() {
         }
 
         pages.push(
-            <button className={`${styleBtn} ${currentPage === totalPages ? 'pointer-events-none bg-darkAcenture' : ' hover:bg-darkSecondary focus:bg-darkSecondary'}`}
+            <button className={`${styleBtn} ${currentPage === totalPages ? 'pointer-events-none bg-darkAcenture' : ' hover:bg-secondary focus:bg-secondary'}`}
                 key={totalPages}
                 onClick={() => handleChangePage(totalPages)}
                 disabled={currentPage === totalPages}
@@ -52,7 +52,7 @@ function Pagination() {
 
         pages.push(
             <button
-                className={`${styleBtn} ${currentPage === totalPages ? 'pointer-events-none bg-darkAcenture' : ' hover:bg-darkSecondary focus:bg-darkSecondary'}`}
+                className={`${styleBtn} ${currentPage === totalPages ? 'pointer-events-none bg-darkAcenture' : ' hover:bg-secondary focus:bg-secondary'}`}
                 key=">>"
                 onClick={() => handleChangePage(currentPage + 1)}
                 disabled={currentPage === totalPages}

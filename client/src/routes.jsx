@@ -12,6 +12,7 @@ import ListCategories from './components/dashboard/pages/ListCategories';
 import ListPost from './components/dashboard/pages/ListPost';
 import PostEditor from './components/dashboard/pages/PostEditor';
 import { useAuthActions } from './redux/actions/authAction';
+import Welcome from './components/dashboard/pages/Welcome';
 
 const RoutesIndex = () => {
     const location = useLocation();
@@ -53,7 +54,9 @@ const RoutesIndex = () => {
             <Route index path="/" element={<Home />} />
             <Route path="/articulo/:artId" element={<ArticleContainer />} />
             <Route exact path="/biblioteca" element={<Biblioteca />} />
+
             {isAdmin() && <Route exact path="/administracion" element={<Dashboard />} >
+                <Route path='welcome' element={<Welcome />} />
                 <Route path="crear-publicacion" element={<PostEditor />} />
                 <Route path="lista-categorias" element={<ListCategories />} />
                 <Route path="lista-publicaciones" element={<ListPost />} />
