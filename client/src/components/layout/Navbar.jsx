@@ -8,7 +8,7 @@ import { useAuthActions } from '../../redux/actions/authAction'
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { isAuthenticated, isLoading } = useAuth0();
-    const { handleLogin, handleLogout } = useAuthActions();
+    const { handleLogin, handleLogout, isAdmin } = useAuthActions();
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -30,14 +30,12 @@ const Navbar = () => {
                         <LinkItem text={'Nosotros'} to={'/nosotros'} />
 
                         {isLoading ? (<span>Cargando...</span>) : isAuthenticated ? (
-                            <>
-                                <NavLink to='/administracion' className='transition duration-300 ease-in-out hover:font-bold dark:hover:text-white'>
-                                    Admin
-                                </NavLink>
+                            <>{isAdmin() && <NavLink to='/administracion' className='transition duration-300 ease-in-out hover:font-bold dark:hover:text-white'>
+                                Admin
+                            </NavLink>}
                                 <button type='button' className='transition duration-300 ease-in-out hover:font-bold dark:hover:text-white' onClick={handleLogout}>
                                     <img src={doorOpen} alt='logout' className='w-6 h-6 filter dark:invert ml-auto' />
-                                </button>
-                            </>
+                                </button></>
                         ) : (
                             <button type='button' className='transition duration-300 ease-in-out hover:font-bold dark:hover:text-white' onClick={handleLogin}>
                                 <img src={userCircleLine} alt='login' className='w-6 h-6 filter dark:invert ml-auto' />
