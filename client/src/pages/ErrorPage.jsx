@@ -7,7 +7,7 @@ function ErrorPage() {
     const handleGoBack = () => { navigate(-1) }
 
     return (
-        <main className="flex flex-col py-3 justify-center items-center">
+        <main className="flex flex-col h-screen py-3 justify-center items-center">
             <img src={image404}
                 alt='imagen de pinguino pescando "not found", referencia a que el enlace esta roto o no existe.'
                 className="w-6/12" />

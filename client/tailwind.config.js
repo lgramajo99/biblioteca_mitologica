@@ -21,11 +21,17 @@ export default {
         deepPurplePri: '#231E2F', //primario Dark
         darkPurple: '#433e4d', //secundario Dark
         grayishPurple: '#65606e', //acento Dark
+        
+        lightPrimary: '#59acc4',
+        lightSecondary: '#3D747F',
+        lightAcenture: '#c5d5d9', //bg fondo
+        
 
         darkPrimary: '#121212',
         darkSecondary: '#3D747F',
-        darkAcenture: '#0f172acc',
+        darkAcenture: '#0f172acc', //bg fondo
         darkTxt: '#F5F5F5'
+
       }
     },
   },

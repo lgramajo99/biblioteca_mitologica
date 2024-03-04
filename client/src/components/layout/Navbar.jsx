@@ -13,7 +13,7 @@ const Navbar = () => {
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     return (
-        <nav className='dark:bg-darkAcenture dark:text-darkTxt py-6'>
+        <nav className='bg-lightPrimary dark:bg-darkPrimary dark:text-darkTxt py-6'>
             <section className='md:container mx-auto flex items-start md:items-center px-2 sm:px-0'>
                 <article className='flex items-center justify-between w-9/12 md:w-7/12 pr-2'>
                     <span className='font-bold text-xl'>B.M</span>
