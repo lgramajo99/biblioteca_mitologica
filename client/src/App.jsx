@@ -1,10 +1,11 @@
-import './App.css'
-import Home from './pages/Home'
+import RoutesIndex from './routes';
 
 function App() {
   return (
-  <Home />
-  )
+    <div className='bg-lightAcenture dark:bg-darkAcenture dark:text-darkTxt'>
+      <RoutesIndex />
+    </div>
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,107 @@
+[
+    {
+        "id": 1,
+        "name": "Mitología griega",
+        "count_post": 100,
+        "description": "La mitología griega es el conjunto de mitos y leyendas pertenecientes a los antiguos griegos, que conforman su religión, cultura y tradición.",
+        "region": "Grecia"
+    },
+    {
+        "id": 2,
+        "name": "Mitología nórdica",
+        "count_post": 85,
+        "description": "La mitología nórdica es el conjunto de creencias y leyendas de los pueblos escandinavos, que incluyen a los vikingos, suecos, noruegos, daneses e islandeses.",
+        "region": "Escandinavia"
+    },
+    {
+        "id": 3,
+        "name": "Mitología egipcia",
+        "count_post": 75,
+        "description": "La mitología egipcia es el conjunto de creencias religiosas y leyendas del antiguo Egipto, centradas en torno a sus dioses, faraones y el más allá.",
+        "region": "Egipto"
+    },
+    {
+        "id": 4,
+        "name": "Mitología romana",
+        "count_post": 70,
+        "description": "La mitología romana se basa en gran medida en la mitología griega, pero con adaptaciones y cambios propios de la cultura romana.",
+        "region": "Roma"
+    },
+    {
+        "id": 5,
+        "name": "Mitología celta",
+        "count_post": 60,
+        "description": "La mitología celta es el conjunto de mitos y leyendas de los antiguos pueblos celtas, principalmente de las Islas Británicas y la Europa continental.",
+        "region": "Europa Occidental"
+    },
+    {
+        "id": 6,
+        "name": "Mitología hindú",
+        "count_post": 55,
+        "description": "La mitología hindú es el conjunto de creencias y leyendas de la India, que incluyen una amplia gama de dioses, diosas y héroes.",
+        "region": "India"
+    },
+    {
+        "id": 7,
+        "name": "Mitología china",
+        "count_post": 50,
+        "description": "La mitología china es el conjunto de mitos y leyendas de la antigua China, que incluyen a sus dioses, héroes y criaturas míticas.",
+        "region": "China"
+    },
+    {
+        "id": 8,
+        "name": "Mitología japonesa",
+        "count_post": 45,
+        "description": "La mitología japonesa es el conjunto de creencias y leyendas de Japón, que incluyen a sus dioses sintoístas, espíritus y monstruos.",
+        "region": "Japón"
+    },
+    {
+        "id": 9,
+        "name": "Mitología mesopotámica",
+        "count_post": 40,
+        "description": "La mitología mesopotámica es el conjunto de creencias y leyendas de los antiguos pueblos de Mesopotamia, como los sumerios, acadios y babilonios.",
+        "region": "Mesopotamia"
+    },
+    {
+        "id": 10,
+        "name": "Mitología africana",
+        "count_post": 35,
+        "description": "La mitología africana es el conjunto de mitos y leyendas de los pueblos indígenas de África, que varían ampliamente según la región y la cultura.",
+        "region": "África"
+    },
+    {
+        "id": 11,
+        "name": "Mitología aborigen australiana",
+        "count_post": 30,
+        "description": "La mitología aborigen australiana es el conjunto de creencias y leyendas de los pueblos indígenas de Australia, que incluyen a los sueños creadores y seres ancestrales.",
+        "region": "Australia"
+    },
+    {
+        "id": 12,
+        "name": "Mitología inca",
+        "count_post": 25,
+        "description": "La mitología inca es el conjunto de creencias y leyendas del antiguo imperio incaico, que incluyen a sus dioses, héroes y mitos de origen.",
+        "region": "Perú"
+    },
+    {
+        "id": 13,
+        "name": "Mitología maya",
+        "count_post": 20,
+        "description": "La mitología maya es el conjunto de creencias y leyendas de los antiguos mayas, que incluyen a sus dioses, diosas, héroes y la cosmología del universo maya.",
+        "region": "Mesoamérica"
+    },
+    {
+        "id": 14,
+        "name": "Mitología azteca",
+        "count_post": 15,
+        "description": "La mitología azteca es el conjunto de creencias y leyendas del antiguo imperio azteca, que incluyen a sus dioses, rituales y mitos de origen.",
+        "region": "Mesoamérica"
+    },
+    {
+        "id": 15,
+        "name": "Mitología polinesia",
+        "count_post": 10,
+        "description": "La mitología polinesia es el conjunto de mitos y leyendas de los pueblos polinesios, que incluyen a las islas del Pacífico como Hawái, Tahití y Nueva Zelanda.",
+        "region": "Polinesia"
+    }
+]

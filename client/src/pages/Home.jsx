@@ -1,8 +1,13 @@
+import Asidebar from "../components/layout/Asidebar";
+import MainContent from "../components/layout/MainContent";
+
 function Home() {
     return (
-        <div>
-            <h1>Biblioteca mitologica</h1>
-        </div>
+        <section className="flex flex-wrap text-center">
+            <MainContent />
+            <Asidebar />
+        </section >
     )
 }
+
 export default Home;
