@@ -4,19 +4,21 @@ import { userCircleLine, doorOpen } from '../../assets/index';
 import { useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useAuthActions } from '../../redux/actions/authAction'
+import { bmDark, bmLight } from '../../assets/image/logo';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { isAuthenticated, isLoading } = useAuth0();
     const { handleLogin, handleLogout, isAdmin } = useAuthActions();
-
+    const { themeChangeMode } = useSelector(state => state.admin);
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     return (
         <nav className='bg-lightPrimary dark:bg-darkPrimary dark:text-darkTxt py-6'>
             <section className='md:container mx-auto flex items-start md:items-center px-2 sm:px-0'>
                 <article className='flex items-center justify-between w-9/12 md:w-7/12 pr-2'>
-                    <span className='font-bold text-xl'>B.M</span>
+                    <img src={themeChangeMode ? bmDark : bmLight} className='w-28' alt='Logo de B|M' />
                     <SearchForm />
                 </article>
 
